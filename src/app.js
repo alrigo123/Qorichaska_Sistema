@@ -4,6 +4,9 @@ const app = express();
 
 let PORT = "2021";
 
+app.set('view engine', 'ejs');
+
+
 app.get('/',(req,res)=>{
     res.send("RESERVAS DEL HOTEL QORICHASKA");
 })
