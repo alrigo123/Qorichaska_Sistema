@@ -3,10 +3,25 @@
   "version": "1.0.0",
   "description": "sistema web de reservas",
   "main": "index.js",
-  "repository": "https://github.com/alrigo123/Qorichaska_Sistema.git",
-  "author": "Aiur <diegomactor13@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alrigo123/Qorichaska_Sistema.git"
+  },
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "bugs": {
+    "url": "https://github.com/alrigo123/Qorichaska_Sistema/issues"
+  },
+  "homepage": "https://github.com/alrigo123/Qorichaska_Sistema#readme",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }
