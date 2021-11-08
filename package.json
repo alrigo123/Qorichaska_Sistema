@@ -1,19 +1,12 @@
 {
-  "name": "Reservas",
+  "name": "qoriweb",
   "version": "1.0.0",
-  "description": "",
+  "description": "sistema web de reservas",
   "main": "index.js",
-  "scripts": {
-    "start": "node src/app.js",
-    "run": "nodemon src/app.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": "https://github.com/alrigo123/Qorichaska_Sistema.git",
+  "author": "Aiur <diegomactor13@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.14"
   }
 }
