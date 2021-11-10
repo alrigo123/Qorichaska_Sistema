@@ -5,9 +5,19 @@ const app = express();
 
 const index = require('./routes/index');
 
-let PORT = "2021";
+
+require('dotenv').config();
+
+const PORTO = process.env.PORT;
+const key = process.env.KEY;
+const day = process.env.DAY;
+const token = process.env.JWT_WEB_TOKEN;
+
+
+console.log(key , day ,token);
 
 app.set('view engine', 'ejs');
+
 
 
 //Middleware
@@ -28,6 +38,6 @@ app.use('/',index)
 
 
 //Listen to port
-app.listen(PORT, () => {
-    console.log(`Server started on ${PORT}`);
+app.listen(PORTO, () => {
+    console.log(`Server started on ${PORTO}`);
 });
