@@ -6,7 +6,7 @@
   <div class="container p-5 box" style="background-color:#fff;">
     <div class="row">
       <form action="#" class="form">
-        <h1 class="text-center">Registration Form</h1>
+        <h1 class="text-center text-dark">Formulario Registro</h1>
         <!-- Progress bar -->
         <div class="progressbar">
           <div class="progress" id="progress"></div>
@@ -20,44 +20,44 @@
 
         <!-- Steps -->
         <!-- PARTE 1 -->
-        <div class="form-step form-step-active col-12">
+        <div class="form-step form-step-active col-12 text-dark">
           <div class="row ">
-            <div class="col-md-6">
-              <div class="input-group">
+            <div class="col-md-6" style="border: 1px none red;">
+              <div class="form-group">
                 <label for="username">Nombre(s) Titular</label>
                 <input type="text" name="nombre_titular" id="nombre_titular" />
               </div>
-              <div class="input-group">
+              <div class="form-group">
                 <label for="dob">Fecha Nacimiento</label>
                 <input type="date" name="fecha_nac" id="fecha_nac" />
               </div>
-              <div class="input-group">
+              <div class="form-group">
                 <label for="position">Numero de Referencia</label>
                 <input type="text" name="nro_telefono" id="nro_telefono" />
               </div>
-              <div class="input-group">
+              <div class="form-group">
                 <label for="position">Email</label>
                 <input type="text" name="email" id="email" />
               </div>
             </div>
             <div class="col-md-6">
-              <div class="input-group">
+              <div class="form-group">
                 <label for="position">Apellidos</label>
                 <input type="text" name="apellidos" id="apellidos" />
               </div>
-              <div class="input-group">
+              <div class="form-group">
                 <label for="position">Pais</label>
                 <input type="text" name="pais" id="pais" />
                 <!-- aGREGAR EN BD Pais - Ciudad -->
               </div>
-              <div class="input-group">
+              <div class="form-group">
                 <label for="position">Ciudad</label>
                 <input type="text" name="ciudad" id="ciudad" />
                 <!-- aGREGAR EN BD Pais - Ciudad -->
               </div>
               <div class="mt-4">
                 <br>
-                <a href="#" class="btn btn-next width-50 mx-auto">Siguiente</a>
+                <a href="#" role="button" class="btn btn-next width-50 mx-auto">Siguiente</a>
               </div>
             </div>
           </div>
@@ -69,8 +69,8 @@
 
 
         <!-- PARTE 2 -->
-        <div class="form-step">
-          <div class="input-group">
+        <div class="form-step text-dark">
+          <div class="form-group">
             <label class="mt-1" for="nro_personas">Numero de Huespedes</label><br>
             <div class="col-md-3 mx-3">
               <select class="form-select" name="nro_personas" id="nro_personas">
@@ -80,7 +80,7 @@
               </select>
             </div>
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label class="mt-1" for="nro_habitaciones">Numero Habitaciones</label><br>
             <div class="col-md-3 mx-5">
               <select class="form-select" name="nro_habitaciones" id="nro_habitaciones">
@@ -90,15 +90,15 @@
               </select>
             </div>
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label for="llegada">Fecha Llegada</label>
             <input type="date" name="fecha_arribo" id="fecha_arribo" />
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label for="salida">Fecha Salida</label>
             <input type="date" name="fecha_salida" id="fecha_salida" />
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label for="estadia">Estadia</label>
             <input type="number" name="duracion_estadia" id="duracion_estadia" />
           </div>
@@ -111,8 +111,8 @@
 
 
         <!-- PARTE 3 -->
-        <div class="form-step">
-          <div class="input-group">
+        <div class="form-step text-dark">
+          <div class="form-group">
             <labe for="nhabitacion">Seleccione N habitaciones</labe>
             <input type="" name="nro_habitaciones" id="nro_habitaciones">
           </div>
@@ -132,11 +132,11 @@
         </div>
 
         <!-- PARTE 4 -->
-        <div class="form-step">
-          <div class="input-group">
+        <div class="form-step text-dark">
+          <div class="form-group">
             <label for="metodo">MetodoPago</label>
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label for="ID">National ID</label>
             <input type="number" name="ID" id="ID" />
           </div>
@@ -147,12 +147,12 @@
         </div>
 
         <!-- PARTE 5 -->
-        <div class="form-step">
-          <div class="input-group">
+        <div class="form-step text-dark">
+          <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" />
           </div>
-          <div class="input-group">
+          <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" name="confirmPassword" id="confirmPassword" />
           </div>
