@@ -9,11 +9,12 @@
   }
 
 .box{
-    border:10px solid red;
+    border:10px none red;
     width:100%;
+    border-radius: 0.55rem;
 }
 body{
-    border:10px solid green;
+    border:10px none green;
 }
   /* Global Stylings */
 
@@ -99,10 +100,11 @@ body{
   
   /* Form */
   .form {
-    width: clamp(320px, 30%, 430px);
+    /* width: clamp(320px, 30%, 430px); */
+    width: 75%;
     margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 0.35rem;
+    border: 2px solid #ccc;
+    border-radius: 0.55rem;
     padding: 1.5rem;
   }
   

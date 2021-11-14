@@ -1,81 +1,172 @@
 <%- include ('./layouts/header.ejs') %>
-    <div class="container p-5 box" style="background-color:#fff;">
-        <form action="#" class="form">
-            <h1 class="text-center">Registration Form</h1>
-            <!-- Progress bar -->
-            <div class="progressbar">
-              <div class="progress" id="progress"></div>
-              
-              <div
-                class="progress-step progress-step-active"
-                data-title="Intro"
-              ></div>
-              <div class="progress-step" data-title="Contact"></div>
-              <div class="progress-step" data-title="ID"></div>
-              <div class="progress-step" data-title="Password"></div>
-            </div>
-      
-            <!-- Steps -->
-            <div class="form-step form-step-active">
+
+
+
+
+  <div class="container p-5 box" style="background-color:#fff;">
+    <div class="row">
+      <form action="#" class="form">
+        <h1 class="text-center">Registration Form</h1>
+        <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+
+          <div class="progress-step progress-step-active" data-title="Datos"></div>
+          <div class="progress-step" data-title="Estadia"></div>
+          <div class="progress-step" data-title="ID"></div>
+          <div class="progress-step" data-title="Password"></div>
+          <div class="progress-step" data-title="Password"></div>
+        </div>
+
+        <!-- Steps -->
+        <!-- PARTE 1 -->
+        <div class="form-step form-step-active col-12">
+          <div class="row ">
+            <div class="col-md-6">
               <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" />
+                <label for="username">Nombre(s) Titular</label>
+                <input type="text" name="nombre_titular" id="nombre_titular" />
               </div>
               <div class="input-group">
-                <label for="position">Position</label>
-                <input type="text" name="position" id="position" />
-              </div>
-              <div class="">
-                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
-              </div>
-            </div>
-            <div class="form-step">
-              <div class="input-group">
-                <label for="phone">Phone</label>
-                <input type="text" name="phone" id="phone" />
+                <label for="dob">Fecha Nacimiento</label>
+                <input type="date" name="fecha_nac" id="fecha_nac" />
               </div>
               <div class="input-group">
-                <label for="email">Email</label>
+                <label for="position">Numero de Referencia</label>
+                <input type="text" name="nro_telefono" id="nro_telefono" />
+              </div>
+              <div class="input-group">
+                <label for="position">Email</label>
                 <input type="text" name="email" id="email" />
               </div>
-              <div class="btns-group">
-                <a href="#" class="btn btn-prev">Previous</a>
-                <a href="#" class="btn btn-next">Next</a>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <label for="position">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" />
+              </div>
+              <div class="input-group">
+                <label for="position">Pais</label>
+                <input type="text" name="pais" id="pais" />
+                <!-- aGREGAR EN BD Pais - Ciudad -->
+              </div>
+              <div class="input-group">
+                <label for="position">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad" />
+                <!-- aGREGAR EN BD Pais - Ciudad -->
+              </div>
+              <div class="mt-4">
+                <br>
+                <a href="#" class="btn btn-next width-50 mx-auto">Siguiente</a>
               </div>
             </div>
-            <div class="form-step">
-              <div class="input-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" name="dob" id="dob" />
-              </div>
-              <div class="input-group">
-                <label for="ID">National ID</label>
-                <input type="number" name="ID" id="ID" />
-              </div>
-              <div class="btns-group">
-                <a href="#" class="btn btn-prev">Previous</a>
-                <a href="#" class="btn btn-next">Next</a>
-              </div>
-            </div>
-            <div class="form-step">
-              <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" />
-              </div>
-              <div class="input-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  id="confirmPassword"
-                />
-              </div>
-              <div class="btns-group">
-                <a href="#" class="btn btn-prev">Previous</a>
-                <input type="submit" value="Submit" class="btn" />
-              </div>
-            </div>
-          </form>
-    </div>
+          </div>
+        </div>
 
-    <%- include ('./layouts/footer.ejs') %>
+
+
+
+
+
+        <!-- PARTE 2 -->
+        <div class="form-step">
+          <div class="input-group">
+            <label class="mt-1" for="nro_personas">Numero de Huespedes</label><br>
+            <div class="col-md-3 mx-3">
+              <select class="form-select" name="nro_personas" id="nro_personas">
+                <option value="1">1 Persona</option>
+                <option value="2">2 Personas</option>
+                <option value="3">3 Personas</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="mt-1" for="nro_habitaciones">Numero Habitaciones</label><br>
+            <div class="col-md-3 mx-5">
+              <select class="form-select" name="nro_habitaciones" id="nro_habitaciones">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="llegada">Fecha Llegada</label>
+            <input type="date" name="fecha_arribo" id="fecha_arribo" />
+          </div>
+          <div class="input-group">
+            <label for="salida">Fecha Salida</label>
+            <input type="date" name="fecha_salida" id="fecha_salida" />
+          </div>
+          <div class="input-group">
+            <label for="estadia">Estadia</label>
+            <input type="number" name="duracion_estadia" id="duracion_estadia" />
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Anterior</a>
+            <a href="#" class="btn btn-next">Siguiente</a>
+          </div>
+        </div>
+
+
+
+        <!-- PARTE 3 -->
+        <div class="form-step">
+          <div class="input-group">
+            <labe for="nhabitacion">Seleccione N habitaciones</labe>
+            <input type="" name="nro_habitaciones" id="nro_habitaciones">
+          </div>
+          <div class="Row">
+            <label for="shabitacion">sus habitaciones</label>
+            <table>
+              <tbody>
+                <tr></tr>
+                <tr></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- PARTE 4 -->
+        <div class="form-step">
+          <div class="input-group">
+            <label for="metodo">MetodoPago</label>
+          </div>
+          <div class="input-group">
+            <label for="ID">National ID</label>
+            <input type="number" name="ID" id="ID" />
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- PARTE 5 -->
+        <div class="form-step">
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="input-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" />
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <input type="submit" value="Submit" class="btn" />
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <%- include ('./layouts/footer.ejs') %>

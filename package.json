@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/alrigo123/Qorichaska_Sistema.git"
   },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -21,10 +25,6 @@
     "url": "https://github.com/alrigo123/Qorichaska_Sistema/issues"
   },
   "homepage": "https://github.com/alrigo123/Qorichaska_Sistema#readme",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
-  },
   "keywords": [],
   "devDependencies": {
     "nodemon": "^2.0.14"
