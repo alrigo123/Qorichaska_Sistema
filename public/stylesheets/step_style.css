@@ -104,10 +104,11 @@ body{
     width: 75%;
     margin: 0 auto;
     margin-top: 14rem;
+    margin-bottom:14rem;    
     border: 2px solid #ccc;
     border-radius: 0.55rem;
     padding: 1.5rem;
-    background-color:rgb(226, 226, 226);
+    background-color:rgb(172, 172, 172);
   }
   
   .form-step {
@@ -120,6 +121,37 @@ body{
     display: block;
   }
   
+#mySelect{
+  border: 1px none red;
+  padding: 0.75rem;
+  width: 25%;
+  text-align: center;
+  font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
+  font-size:16px;
+  font-weight:bold;
+}
+.mySelect{
+  border: 1px none red;
+  padding: 0.75rem;
+  width: 25%;
+  text-align: center;
+  font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
+  font-size:16px;
+  font-weight:bold;
+}
+.pago{
+  border: 1px none blue;
+  padding: 0.75rem;
+  font-size:16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#input_pago{
+background: rgb(190, 190, 190);
+}
+
   .input-group {
     margin: 2rem 0;
   }
