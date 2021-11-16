@@ -9,8 +9,11 @@ create table tcliente(
     apellidos varchar(55) not null,
     tipo_documento varchar(40) not null check (tipo_documento in ('PASAPORTE','DNI')),
     email varchar(99) not null,
-    fecha_nac date,
-    nro_telefono varchar(15)
+    fecha_nac date not null,
+    nro_telefono varchar(15) not null,
+    nro_documento varchar(30) not null,
+    pais_or varchar(20) not null,
+    ciudad varchar(20) not null
     );
     
 -- tabla pago, datos del pago de una reserva
