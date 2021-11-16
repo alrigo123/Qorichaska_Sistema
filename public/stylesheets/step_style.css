@@ -50,10 +50,14 @@ body{
     justify-content: space-between;
     counter-reset: step;
     margin: 2rem 0 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
   }
   
   .progressbar::before,
   .progress {
+    font-size: 24px;
     content: "";
     position: absolute;
     top: 50%;
@@ -89,9 +93,11 @@ body{
     content: attr(data-title);
     position: absolute;
     top: calc(100% + 0.5rem);
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
   }
+
   
   .progress-step-active {
     background-color: var(--primary-color);

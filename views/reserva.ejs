@@ -10,7 +10,6 @@
           <h1 class="text-center text-dark">Formulario Registro</h1>
           <!-- Progress bar -->
           <div class="progressbar text-black">
-            <div class="progress" id="progress"></div>
             <div class="progress-step progress-step-active" data-title="Datos"></div>
             <div class="progress-step" data-title="Estadia"></div>
             <div class="progress-step" data-title="ID"></div>
@@ -110,39 +109,129 @@
                   <label for="estadia">Estadia</label>
                   <input readonly type="text" name="duracion_estadia" id="daysDiscount" />
                 </div>
-                <div class="btns-group">
-                  <a href="#" class="btn btn-prev">Anterior</a>
-                  <a href="#" class="btn btn-next">Siguiente</a>
-                </div>
               </div>
+            </div>
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev">Anterior</a>
+              <a href="#" class="btn btn-next">Siguiente</a>
             </div>
           </div>
 
           <!-- PARTE 3 -->
-          <div class="form-step">
-            <div class="Row">
-              <labe for="nhabitacion">Seleccione N habitaciones</labe>
-              <table border="2px">
-                <tbody>
-                  <td>tipo</td>
-                  <td>estado</td>
-                </tbody>
-              </table>
-            </div>
-            <div class="Row">
-              <label for="shabitacion">sus habitaciones</label>
-              <table border="2px">
-                <tbody>
-                  <td>tipo</td>
-                  <td>cantidad</td>
-                </tbody>
-              </table>
+          <div class="form-step text-dark">
+            <h3 class="text-center">Habitaciones</h3>
+            <div class="row text-dark" style="border: 2px none red;">
+              <div class="col-md-6" style="border: 2px none blue;">
+                <!-- Con Bucle -->
+                <table class="table table-bordered table-responsive table-dark table-hover">
+                  <thead class="thead-default thead-light">
+                    <tr class="text-center">
+                      <th scope="col" class="text-center">Habitacion</th>
+                      <th class="text-center">Estado</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center">
+                      <td class="text-center" scope="row">
+                        SIMPLE
+                      </td>
+                      <td class="text-center">
+                        Disponible
+                      </td>
+                      <td>
+                        <button onclick="cantidad(5,0)">+</button>
+                        <button onclick="cantidad(5,0)">-</button>
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td class="text-center" scope="row">
+                        DOBLE
+                      </td>
+                      <td class="text-center">
+                        No Disponible
+                      </td>
+                      <td>
+                        <button disabled onclick="cantidad(5,0)">-</button>
+                        <button disabled onclick="cantidad(5,0)">+</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6 text-center mx-auto" style="border: 1px solid #000000;margin-bottom:15px;padding:5px;border-radius:10px">
+                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
+                  <div class="col-md-2" style="border: 2px none orange">
+                  </div>
+                  <div class="col-md-4" style="border: 2px none orange">
+                    <h4>Simple</h4>
+                  </div>
+                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                    <input type="text" class="text-center" value="1">
+                  </div>
+                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  </div>
+                </div>
+                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
+                  <div class="col-md-2" style="border: 2px none orange">
+                  </div>
+                  <div class="col-md-4" style="border: 2px none orange">
+                    <h4>Doble</h4>
+                  </div>
+                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                    <input type="text" class="text-center" value="1">
+                  </div>
+                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  </div>
+                </div>
+                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
+                  <div class="col-md-2" style="border: 2px none orange">
+                  </div>
+                  <div class="col-md-4" style="border: 2px none orange">
+                    <h4>Triple</h4>
+                  </div>
+                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                    <input type="text" class="text-center" value="2">
+                  </div>
+                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  </div>
+                </div>
+                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
+                  <div class="col-md-2" style="border: 2px none orange">
+                  </div>
+                  <div class="col-md-4" style="border: 2px none orange">
+                    <h4>Matrimonial</h4>
+                  </div>
+                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                    <input type="text" class="text-center" value="0">
+                  </div>
+                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  </div>
+                </div>
+                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
+                  <div class="col-md-2" style="border: 2px none orange">
+                  </div>
+                  <div class="col-md-4" style="border: 2px none orange">
+                    <h4>Suit</h4>
+                  </div>
+                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                    <input type="text" class="text-center" value="0">
+                  </div>
+                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="btns-group">
               <a href="#" class="btn btn-prev">Previous</a>
               <a href="#" class="btn btn-next">Next</a>
             </div>
           </div>
+
+
+
+
+
 
           <!-- PARTE 4 -->
           <div class="form-step text-dark">
@@ -221,6 +310,7 @@
               </div>
             </div>
           </div>
+
         </form>
       </div>
     </div>
