@@ -5,7 +5,7 @@
 
   <div class="container p-5 box" style="background-color:transparente;">
     <div class="row">
-      <form action="#" class="form">
+      <div action="#" class="form">
         <h1 class="text-center text-dark">Formulario Registro</h1>
         <!-- Progress bar -->
         <div class="progressbar">
@@ -32,8 +32,12 @@
                 <input type="date" name="fecha_nac" id="fecha_nac" />
               </div>
               <div class="form-group">
-                <label for="position">Numero de Referencia</label>
+                <label for="position">Pais</label>
                 <input type="text" name="nro_telefono" id="nro_telefono" />
+              </div>
+              <div class="form-group">
+                <label for="position">Tipo de Documento</label>
+                <input type="text" name="email" id="email" />
               </div>
               <div class="form-group">
                 <label for="position">Email</label>
@@ -46,7 +50,7 @@
                 <input type="text" name="apellidos" id="apellidos" />
               </div>
               <div class="form-group">
-                <label for="position">Pais</label>
+                <label for="position">Numero de Referencia</label>
                 <input type="text" name="pais" id="pais" />
                 <!-- aGREGAR EN BD Pais - Ciudad -->
               </div>
@@ -54,6 +58,14 @@
                 <label for="position">Ciudad</label>
                 <input type="text" name="ciudad" id="ciudad" />
                 <!-- aGREGAR EN BD Pais - Ciudad -->
+              </div>
+              <div class="form-group">
+                <label for="position">Nro Documento</label>
+                <select class="form-select mySelect" name="nro_personas" id="myselect" style="width: 100%">
+                  <option value="1">DNI</option>
+                  <option value="2">Pasaporte</option>
+                  <option value="3">Otro</option>
+                </select>
               </div>
               <div class="mt-4">
                 <br>
@@ -63,18 +75,13 @@
           </div>
         </div>
 
-
-
-
-
-
         <!-- PARTE 2 -->
         <div class="form-step form-step col-12 text-dark" style="border: 1px none blue;">
           <div class="row">
             <div class="col-md-6" style="border: 1px none red;">
               <div class="pago">
                 <label for="metodo">Numero de Huespedes</label>
-                <select class="form-select mySelect" name="nro_personas" id="myselect">
+                <select class="form-select mySelect" name="nro_personas" id="myselect" style="width: 50%">
                   <option value="1">1 Persona</option>
                   <option value="2">2 Personas</option>
                   <option value="3">3 Personas</option>
@@ -83,7 +90,7 @@
               <br>
               <div class="pago">
                 <label for="metodo">Numero Habitaciones</label>
-                <select class="form-select mySelect" name="nro_habitaciones" id="myselect">
+                <select class="form-select mySelect" name="nro_habitaciones" id="myselect" style="width: 50%">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -111,20 +118,23 @@
           </div>
         </div>
 
-
-
         <!-- PARTE 3 -->
-        <div class="form-step form-step text-dark">
-          <div class="form-group">
+        <div class="form-step">
+          <div class="Row">
             <labe for="nhabitacion">Seleccione N habitaciones</labe>
-            <input type="" name="nro_habitaciones" id="nro_habitaciones">
+            <table border="2px">
+              <tbody>
+                <td>tipo</td>
+                <td>estado</td>
+              </tbody>
+            </table>
           </div>
           <div class="Row">
             <label for="shabitacion">sus habitaciones</label>
-            <table>
+            <table border="2px">
               <tbody>
-                <tr></tr>
-                <tr></tr>
+                <td>tipo</td>
+                <td>cantidad</td>
               </tbody>
             </table>
           </div>
@@ -136,7 +146,7 @@
 
         <!-- PARTE 4 -->
         <div class="form-step text-dark">
-          <div class="form-group" style="border: 10px none green;">
+          <div class="form-group justify-content-center align-items-center" style="border: 10px none green;">
             <div class="pago">
               <label for="metodo">Metodo de Pago</label>
               <select id="mySelect" onchange="myFunction()">
@@ -145,10 +155,9 @@
                 <option value="Deposito">Deposito</option>
               </select>
             </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <p id="demo"></p>
+            <div class="container justify-content-center align-items-center text-center">
+              <div class="row" style="border: 10px none green; align-items: center; justify-content: center;">
+                <div id="demo" class="col-md-6" style="border: 10px none red;margin:15px;margin-left: 50px;">
                 </div>
               </div>
             </div>
@@ -165,52 +174,59 @@
           <div class="row ">
             <div class="col-md-6" style="border: 1px none red;">
               <div class="form-group">
-                <form name="resumen">
-                  <tr>
-                    <td>Nombre:</td>
-                    <td><input type="text" name="nombre_titular" id="nombre_titular"></td>
-                  </tr>
-                  <tr>
-                    <td>fecha_arribo:</td>
-                    <td><input type="text" name="fecha_arribo" id="fecha_arribo"></td>
-                  </tr>
-                  <tr>
-                    <td>fecha_salida:</td>
-                    <td><input type="text" name="fecha_salida" id="fecha_salida"></td>
-                  </tr>
-                  <tr>
-                    <td>Tipo Habitacion:</td>
-                    <td><input type="text" name="" id=""></td>
-                  </tr>
-                  <tr>
-                    <td>Nro de habitaciones:</td>
-                    <td><input type="text" name="nro_habitaciones" id="nro_habitaciones"></td>
-                  </tr>
-                  <tr>
-                    <td>Nro de huespedes:</td>
-                    <td><input type="text" name="nro_personas" id="mySelect"></td>
-                  </tr>
-                  <tr>
-                    <td>Email</td>
-                    <td><input type="text" name="email" id="email"></td>
-                  </tr>
-                  <tr>
-                    <td>Metodo de Pago</td>
-                    <td><input type="text" name="metodo" id="metodo"></td>
-                  </tr>
-                </form>
+                <label for="username">Titular</label>
+                <input readonly value="Juan Perez" type="text" name="nombre_titular" id="nombre_titular" />
+              </div>
+              <div class="form-group">
+                <label for="dob">Fecha Arribo</label>
+                <input readonly type="date" name="fecha_nac" id="fecha_nac" />
+              </div>
+              <div class="form-group">
+                <label for="position">Fecha Salida</label>
+                <input readonly type="date" name="fecha_nac" id="fecha_nac" />
+              </div>
+              <div class="form-group">
+                <label for="position">Tipo Habitacion</label>
+                <input readonly value="Matrimonial - Simple" type="text" name="email" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="position">Numero Documento</label>
+                <input readonly value="1563512823" type="text" name="email" id="email" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="position">Nro Habitaciones</label>
+                <input readonly value="2" type="text" name="apellidos" id="apellidos" />
+              </div>
+              <div class="form-group">
+                <label for="position">Nro Huespedes</label>
+                <input readonly value="3" type="text" name="pais" id="pais" />
+                <!-- aGREGAR EN BD Pais - Ciudad -->
+              </div>
+              <div class="form-group">
+                <label for="position">Email</label>
+                <input readonly value="juan@gamil.com" type="text" name="ciudad" id="ciudad" />
+                <!-- aGREGAR EN BD Pais - Ciudad -->
+              </div>
+              <div class="form-group">
+                <label for="position">Metodo de Pago</label>
+                <input readonly value="Tarjeta" type="text" name="ciudad" id="ciudad" />
+                <!-- aGREGAR EN BD Pais - Ciudad -->
               </div>
               <div class="btns-group">
                 <a href="#" class="btn btn-prev">Previous</a>
-                <input type="submit" value="Submit" class="btn" />
+                <input readonly type="submit" value="Submit" class="btn" />
               </div>
             </div>
+          </div>
+        </div>
 
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
 
 
 
 
-  <%- include ('./layouts/footer.ejs') %>
+    <%- include ('./layouts/footer.ejs') %>

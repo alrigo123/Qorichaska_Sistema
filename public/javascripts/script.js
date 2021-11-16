@@ -43,7 +43,7 @@ function myFunction() {
   if (x === 'Tarjeta') {
     document.getElementById(
       'demo',
-    ).innerHTML = ` <form action="" id="form_pago">
+    ).innerHTML = ` 
     <div class="mb-3">
     <label for="" class="form-label">Numero Tarjeta</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
@@ -56,15 +56,14 @@ function myFunction() {
     <label for="" class="form-label">Fecha Vencimiento</label>
     <input type="date" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>
-    <div class="mb-3">
+    <div class="mb-4">
     <label for="" class="form-label">CV</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
-    </div>
-    </form>`
+    </div>`
   } else if (x === 'Deposito') {
     document.getElementById(
       'demo',
-    ).innerHTML = ` <form action="" id="form_pago">
+    ).innerHTML = `
     <div class="mb-3">
     <label for="" class="form-label">Numero Cuenta BCP</label>
     <input type="text" placeholder="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
@@ -77,11 +76,10 @@ function myFunction() {
     <label for="" class="form-label">Hora y Fecha del Pago</label>
     <input type="datetime" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>
-    <div class="mb-3">
+    <div class="mb-4">
     <label for="" class="form-label">Numero de Operacion</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
-    </div>
-    </form>`
+    </div>`
   } else {
     document.getElementById('demo').innerHTML = 'ERROR' + x
   }
