@@ -140,8 +140,8 @@
                         Disponible
                       </td>
                       <td>
-                        <button onclick="cantidad(5,0)">+</button>
-                        <button onclick="cantidad(5,0)">-</button>
+                        <button onclick="cantidad(1,0)">-</button>
+                        <button onclick="cantidad(1,1)">+</button>
                       </td>
                     </tr>
                     <tr class="text-center">
@@ -149,75 +149,100 @@
                         DOBLE
                       </td>
                       <td class="text-center">
+                        Disponible
+                      </td>
+                      <td>
+                        <button onclick="cantidad(2,0)">-</button>
+                        <button onclick="cantidad(2,1)">+</button>
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td class="text-center" scope="row">
+                        Triple
+                      </td>
+                      <td class="text-center">
                         No Disponible
                       </td>
                       <td>
-                        <button disabled onclick="cantidad(5,0)">-</button>
-                        <button disabled onclick="cantidad(5,0)">+</button>
+                        <button disabled onclick="cantidad(3,0)">-</button>
+                        <button disabled onclick="cantidad(3,1)">+</button>
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td class="text-center" scope="row">
+                        Matrimonial
+                      </td>
+                      <td class="text-center">
+                        Disponible
+                      </td>
+                      <td>
+                        <button onclick="cantidad(4,0)">-</button>
+                        <button onclick="cantidad(4,1)">+</button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="col-md-6 text-center mx-auto" style="border: 1px solid #000000;margin-bottom:15px;padding:5px;border-radius:10px">
-                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2" style="border: 2px none orange">
+              <div class="col-md-6 text-center mx-auto"
+                style="border: 1px solid #000000;margin-bottom:15px;padding:5px;border-radius:10px">
+                <div class="row text-center" style="border: 2px none brown;">
+                  <div class="col-md-2">
                   </div>
-                  <div class="col-md-4" style="border: 2px none orange">
+                  <div class="col-md-4">
                     <h4>Simple</h4>
                   </div>
-                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
-                    <input type="text" class="text-center" value="1">
+                  <div class="col-md-4 mx-auto">
+                    <input id="1" type="text" class="text-center" value="0">
                   </div>
-                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  <div class="col-md-2 mt-4">
                   </div>
                 </div>
                 <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2" style="border: 2px none orange">
+                  <div class="col-md-2">
                   </div>
-                  <div class="col-md-4" style="border: 2px none orange">
+                  <div class="col-md-4">
                     <h4>Doble</h4>
                   </div>
-                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
-                    <input type="text" class="text-center" value="1">
+                  <div class="col-md-4 mx-auto" >
+                    <input readonly id="2" type="text" class="text-center" value="0">
                   </div>
-                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  <div class="col-md-2 mt-4" >
                   </div>
                 </div>
                 <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2" style="border: 2px none orange">
+                  <div class="col-md-2">
                   </div>
-                  <div class="col-md-4" style="border: 2px none orange">
+                  <div class="col-md-4" >
                     <h4>Triple</h4>
                   </div>
-                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
-                    <input type="text" class="text-center" value="2">
+                  <div class="col-md-4 mx-auto" >
+                    <input readonly id="3" type="text" class="text-center" value="0">
                   </div>
-                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  <div class="col-md-2 mt-4" >
                   </div>
                 </div>
                 <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2" style="border: 2px none orange">
+                  <div class="col-md-2" >
                   </div>
-                  <div class="col-md-4" style="border: 2px none orange">
+                  <div class="col-md-4" >
                     <h4>Matrimonial</h4>
                   </div>
-                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
-                    <input type="text" class="text-center" value="0">
+                  <div class="col-md-4 mx-auto">
+                    <input readonly id="4" type="text" class="text-center" value="0">
                   </div>
-                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  <div class="col-md-2 mt-4" >
                   </div>
                 </div>
                 <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2" style="border: 2px none orange">
+                  <div class="col-md-2" >
                   </div>
-                  <div class="col-md-4" style="border: 2px none orange">
+                  <div class="col-md-4">
                     <h4>Suit</h4>
                   </div>
-                  <div class="col-md-4 mx-auto" style="border: 2px none orange">
+                  <div class="col-md-4 mx-auto">
                     <input type="text" class="text-center" value="0">
                   </div>
-                  <div class="col-md-2 mt-4" style="border: 2px none orange">
+                  <div class="col-md-2 mt-4">
                   </div>
                 </div>
               </div>
@@ -227,11 +252,6 @@
               <a href="#" class="btn btn-next">Next</a>
             </div>
           </div>
-
-
-
-
-
 
           <!-- PARTE 4 -->
           <div class="form-step text-dark">
