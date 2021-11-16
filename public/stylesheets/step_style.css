@@ -186,4 +186,5 @@ background: rgb(235, 233, 233);
   }
   .btn:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+    color:rgba(144, 144, 144, 0.582);
   }
