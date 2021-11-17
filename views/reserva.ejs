@@ -344,7 +344,9 @@
             </div>
             <div class="btns-group">
               <a href="#" class="btn btn-prev">Anterior</a>
-              <input readonly type="submit" value="Reservar" class="btn" />
+              <!-- <input readonly type="submit" value="Reservar" class="btn" /> -->
+              <!-- <input type="submit" value="Reservar" class="btn" /> -->
+              <button type="submit" class="btn" onclick="modal()">Reservar</button>
             </div>
           </div>
 
@@ -353,8 +355,20 @@
       <br><br><br><br><br><br><br> <br>
     </div>
   </div>
-
-
+  
+<script>
+  function modal(){
+  Swal.fire({
+     title:"Reserva",
+     text : 'Reserva Realizada Satisfactoriamente',
+     icon : 'success',
+     showConfirmButton:false,
+     timer: 2500
+  }).then(()=>{
+      window.location='/'
+  })
+}
+</script>
 
 
   <%- include ('./layouts/footer.ejs') %>

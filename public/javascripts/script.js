@@ -109,3 +109,6 @@ function calculardiasDiscount() {
 //Valid date
 
 var timeStart = new Date(document.getElementById('timeStart').value)
+
+
+//Modal

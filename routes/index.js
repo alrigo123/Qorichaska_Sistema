@@ -5,6 +5,6 @@ const view_Controller = require('../controllers/view_controller')
 router.get('/', view_Controller.index)
 router.get('/reserva',view_Controller.reserva)
 
-//router.post('/reserva', data_Reserva);
+router.post('/reserva', view_Controller.success);
 
 module.exports = router
