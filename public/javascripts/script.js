@@ -45,11 +45,11 @@ function myFunction() {
       'demo',
     ).innerHTML = ` 
     <div class="mb-3">
-    <label for="" class="form-label">Numero Tarjeta</label>
+    <label for="" class="form-label">Nombre Propietaro</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-3">
-    <label for="" class="form-label">Nombre Propietaro</label>
+    <label for="" class="form-label">Numero Tarjeta</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-3">
@@ -57,7 +57,7 @@ function myFunction() {
     <input type="date" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-4">
-    <label for="" class="form-label">CV</label>
+    <label for="" class="form-label">CVV</label>
     <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
     </div>`
   } else if (x === 'Deposito') {
