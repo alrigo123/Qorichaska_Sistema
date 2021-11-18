@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Dev
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 // templates engine
 app.set('view engine', 'ejs');

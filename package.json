@@ -18,8 +18,10 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node-env-file": "^0.1.8"
   },
   "bugs": {
     "url": "https://github.com/alrigo123/Qorichaska_Sistema/issues"
