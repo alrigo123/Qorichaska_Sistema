@@ -1,8 +1,5 @@
 <%- include ('./layouts/header.ejs') %>
 
-
-
-
   <div class="container p-5 box" style="background-color:transparente;">
     <div class="row">
       <div action="#" class="form" style="border:1px none red;">
@@ -32,11 +29,11 @@
                 </div>
                 <div class="form-group">
                   <label for="position">Pais</label>
-                  <input type="text" name="nro_telefono" id="nro_telefono" />
+                  <input type="text" name="pais_or" id="nro_telefono" />
                 </div>
                 <div class="form-group">
                   <label for="position">Tipo de Documento</label>
-                  <select class="form-select mySelect" name="nro_personas" id="myselect" style="width: 100%">
+                  <select class="form-select mySelect" name="tipo_documento" id="myselect" style="width: 100%">
                     <option value="1">DNI</option>
                     <option value="2">Pasaporte</option>
                     <option value="3">Otro</option>
@@ -54,7 +51,7 @@
                 </div>
                 <div class="form-group">
                   <label for="position">Numero de Referencia</label>
-                  <input type="text" name="pais" id="pais" />
+                  <input type="text" name="nro_telefono" id="pais" />
                   <!-- aGREGAR EN BD Pais - Ciudad -->
                 </div>
                 <div class="form-group">
@@ -64,7 +61,7 @@
                 </div>
                 <div class="form-group">
                   <label for="position">Nro Documento</label>
-                  <input type="text" name="ciudad" id="ciudad"/>
+                  <input type="text" name="nro_documento" id="ciudad"/>
                 </div>
                 <div class="mt-4">
                   <br>
@@ -79,7 +76,7 @@
             <div class="row">
               <div class="col-md-6" style="border: 1px none red;">
                 <div class="pago">
-                  <label for="metodo">Numero de Huespedes</label>
+                  <label for="metodo">Numero de Huespedes quita esto</label>
                   <select class="form-select mySelect" name="nro_personas" id="myselect" style="width: 50%">
                     <option value="1">1 Persona</option>
                     <option value="2">2 Personas</option>
@@ -88,7 +85,7 @@
                 </div>
                 <br>
                 <div class="pago">
-                  <label for="metodo">Numero Habitaciones</label>
+                  <label for="metodo">Numero Habitaciones esto tambien</label>
                   <select class="form-select mySelect" name="nro_habitaciones" id="myselect" style="width: 50%">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -126,15 +123,15 @@
                   <thead class="thead-default thead-light">
                     <tr class="text-center">
                       <th scope="col" class="text-center">Habitacion</th>
-                      <th scope="col" class="text-center">Precio</th>
-                      <th class="text-center">Estado</th>
+                      <th scope="col" class="text-center">estado</th>
+                      <th class="text-center">precio</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="text-center">
                       <td class="text-center" scope="row">
-                        SIMPLE
+                        a
                       </td>
                       <td class="text-center">
                         Disponible
@@ -300,11 +297,11 @@
                 </div>
                 <div class="form-group">
                   <label for="dob">Fecha Arribo</label>
-                  <input readonly type="date" name="fecha_nac" id="fecha_nac" />
+                  <input readonly type="date" name="fecha_arribo" id="fecha_arribo" />
                 </div>
                 <div class="form-group">
                   <label for="position">Fecha Salida</label>
-                  <input readonly type="date" name="fecha_nac" id="fecha_nac" />
+                  <input readonly type="date" name="fecha_salida" id="fecha_salida" />
                 </div>
                 <div class="form-group">
                   <label for="position">Tipo Habitacion</label>
