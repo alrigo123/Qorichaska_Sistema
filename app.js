@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser')
 
 const app = express();
 
-const index = require('./routes/index');
 
 require('dotenv').config();
 
@@ -22,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Dev
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 // templates engine
 app.set('view engine', 'ejs');
@@ -31,9 +30,13 @@ app.set('views', path.join(__dirname, 'views'))
 // Static Routes
 app.use(express.static(path.join(__dirname, 'public')));
 
- 
+
 //route index
+const index = require('./routes/index');
 app.use('/',index)
+
+
+require('./config/connection');
 
 //Listen to port
 app.listen(PUERTO, () => {

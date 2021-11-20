@@ -41,44 +41,40 @@
 function myFunction() {
   var x = document.getElementById('mySelect').value
   if (x === 'Tarjeta') {
-    document.getElementById(
-      'demo',
-    ).innerHTML = ` 
+    document.getElementById('demo').innerHTML = ` 
     <div class="mb-3">
     <label for="" class="form-label">Nombre Propietaro</label>
-    <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" name="" id="input_pago" placeholder="">
     </div>
     <div class="mb-3">
     <label for="" class="form-label">Numero Tarjeta</label>
-    <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" name="" id="input_pago" placeholder="">
     </div>
     <div class="mb-3">
     <label for="" class="form-label">Fecha Vencimiento</label>
-    <input type="date" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="date" name="" id="input_pago"  placeholder="">
     </div>
-    <div class="mb-4">
+    <div class="mb-3">
     <label for="" class="form-label">CVV</label>
-    <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" name="" id="input_pago" placeholder="">
     </div>`
   } else if (x === 'Deposito') {
-    document.getElementById(
-      'demo',
-    ).innerHTML = `
+    document.getElementById('demo').innerHTML = `
     <div class="mb-3">
     <label for="" class="form-label">Numero Cuenta BCP</label>
-    <input type="text" placeholder="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" placeholder="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-3">
     <label for="" class="form-label">Tipo de Operacion</label>
-    <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-3">
     <label for="" class="form-label">Hora y Fecha del Pago</label>
-    <input type="datetime" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="datetime" name="" id="input_pago" placeholder="" aria-describedby="helpId">
     </div>
     <div class="mb-4">
     <label for="" class="form-label">Numero de Operacion</label>
-    <input type="text" name="" id="input_pago" class="form-control" placeholder="" aria-describedby="helpId">
+    <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
     </div>`
   } else {
     document.getElementById('demo').innerHTML = 'ERROR' + x
