@@ -65,3 +65,15 @@ create table hab_reserva(
     constraint fk_idhab_thab foreign key (id_habitacion) references thabitacion(id_habitacion),
     constraint fk_idreserva_tres foreign key (id_reserva) references treserva(id_reserva)
 );
+
+--
+-- Volcado de datos para la tabla `thabitacion`
+--
+
+INSERT INTO `thabitacion` (`id_habitacion`, `estado`, `precio`, `tipo`, `nro_personas_max`) VALUES
+('H01', 'OCUPADA', 100, 'SIMPLE', 1),
+('H02', 'LIBRE', 150, 'DOBLE', 2),
+('H03', 'LIBRE', 200, 'TRIPLE', 3),
+('H04', 'OCUPADA', 250, 'MATRIMONIAL', 2),
+('H05', 'LIBRE', 350, 'SUITE', 2);
+COMMIT;
