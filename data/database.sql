@@ -7,7 +7,7 @@ create table tcliente(
 	id_cliente varchar(5) primary key not null,
     nombre_titular varchar(30) not null,
     apellidos varchar(55) not null,
-    tipo_documento varchar(40) not null check (tipo_documento in ('PASAPORTE','DNI')),
+    tipo_documento varchar(40) not null check (tipo_documento in ('PASAPORTE','DNI','OTRO')),
     nro_documento varchar(30) not null,
     pais_or varchar(20) not null,
     ciudad varchar(20) not null,

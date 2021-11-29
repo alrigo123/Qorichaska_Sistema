@@ -47,14 +47,6 @@ function updateProgressbar() {
 }
 
 
-//Botones mas y menos
-function cantidad( id_input, operacion){  
-  event.preventDefault();
-  var numero=$('#'+id_input).val();
-  if(operacion=='1'){
-    numero++;
-  } else{
-    numero--;
-  }
-  $('#'+id_input).val(numero);
-}
+
+
+

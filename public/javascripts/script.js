@@ -38,47 +38,14 @@
   })
 })(jQuery)
 
-function myFunction() {
-  var x = document.getElementById('mySelect').value
-  if (x === 'Tarjeta') {
-    document.getElementById('demo').innerHTML = ` 
-    <div class="mb-3">
-    <label for="" class="form-label">Nombre Propietaro</label>
-    <input type="text" name="" id="input_pago" placeholder="">
-    </div>
-    <div class="mb-3">
-    <label for="" class="form-label">Numero Tarjeta</label>
-    <input type="text" name="" id="input_pago" placeholder="">
-    </div>
-    <div class="mb-3">
-    <label for="" class="form-label">Fecha Vencimiento</label>
-    <input type="date" name="" id="input_pago"  placeholder="">
-    </div>
-    <div class="mb-3">
-    <label for="" class="form-label">CVV</label>
-    <input type="text" name="" id="input_pago" placeholder="">
-    </div>`
-  } else if (x === 'Deposito') {
-    document.getElementById('demo').innerHTML = `
-    <div class="mb-3">
-    <label for="" class="form-label">Numero Cuenta BCP</label>
-    <input type="text" placeholder="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-    </div>
-    <div class="mb-3">
-    <label for="" class="form-label">Tipo de Operacion</label>
-    <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-    </div>
-    <div class="mb-3">
-    <label for="" class="form-label">Hora y Fecha del Pago</label>
-    <input type="datetime" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-    </div>
-    <div class="mb-4">
-    <label for="" class="form-label">Numero de Operacion</label>
-    <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-    </div>`
-  } else {
-    document.getElementById('demo').innerHTML = 'ERROR' + x
-  }
+function GetValue(){
+  //La fecha es de tipo Date
+  var timeStart = document.getElementById('timeStart').value;
+  var timeEnd = document.getElementById('timeEnd').value;
+document.getElementById('tiempo-estadia').innerHTML = `
+<label for="dob">Estadia</label>
+<input readonly value="" type="text" name="tiempo-estadia" id="tiempo-estadia" />
+from: <strong> ${timeStart} </strong>   to:   <strong> ${timeEnd} </strong>`;
 }
 
 // To calculate the days transcurred between two dates
@@ -89,12 +56,14 @@ function calculardiasDiscount() {
   if (new Date(timeStart).getTime() < new Date(fechaLimite).getTime()) {
     var actualDate = new Date()
     if (timeEnd > timeStart) {
+      //obtener fecha
       var diff = timeEnd.getTime() - timeStart.getTime()
+      GetValue()
       document.getElementById('daysDiscount').value = `${Math.round(
-        diff / (1000 * 60 * 60 * 24),)} días`
-
+        diff / (1000 * 60 * 60 * 24),
+      )} días`
     } else if (timeEnd != null && timeEnd < timeStart) {
-      (document.getElementById('daysDiscount').value = '0 días')
+      document.getElementById('daysDiscount').value = '0 días'
     }
   } else {
     alert('la fecha es menor')
@@ -105,6 +74,5 @@ function calculardiasDiscount() {
 //Valid date
 
 var timeStart = new Date(document.getElementById('timeStart').value)
-
 
 //Modal

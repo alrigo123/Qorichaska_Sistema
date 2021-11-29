@@ -1,344 +1,346 @@
 <%- include ('./layouts/header.ejs') %>
 
-  <div class="container p-5 box" style="background-color:transparente;">
-    <div class="row">
-      <div action="#" class="form" style="border:1px none red;">
-        <form action="/reserva" method="post">
-          <h1 class="text-center text-dark">Formulario Registro</h1>
-          <!-- Progress bar -->
-          <div class="progressbar text-black">
-            <div class="progress-step progress-step-active" data-title="Datos"></div>
-            <div class="progress-step" data-title="Estadia"></div>
-            <div class="progress-step" data-title="Habitaciones"></div>
-            <div class="progress-step" data-title="Pago"></div>
-            <div class="progress-step" data-title="Resumen"></div>
-          </div>
+    <div class="container p-5 box" style="background-color:transparente;">
+        <div class="row">
+            <div action="#" class="form" style="border:1px none red;">
+                <form action="/reserva" method="post">
+                    <h1 class="text-center text-dark">Formulario de Reserva</h1>
+                    <!-- Progress bar -->
+                    <div class="progressbar text-black">
+                        <div class="progress-step progress-step-active" data-title="Datos"></div>
+                        <div class="progress-step" data-title="Estadia"></div>
+                        <div class="progress-step" data-title="Habitaciones"></div>
+                        <div class="progress-step" data-title="Pago"></div>
+                        <div class="progress-step" data-title="Resumen"></div>
+                    </div>
 
-          <!-- Steps -->
-          <!-- PARTE 1 -->
-          <div class="form-step form-step-active col-12 text-dark">
-            <div class="row ">
-              <div class="col-md-6" style="border: 1px none red;">
-                <div class="form-group">
-                  <label for="username">Nombre(s) Titular</label>
-                  <input type="text" name="nombre_titular" id="" />
-                </div>
-                <div class="form-group">
-                  <label for="dob">Fecha Nacimiento</label>
-                  <input type="date" name="fecha_nac" id="" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Pais</label>
-                  <input type="text" name="pais_or" id="" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Tipo de Documento</label>
-                  <select class="form-select mySelect" name="tipo_documento" id="myselect" style="width: 100%">
-                    <option value="1">DNI</option>
-                    <option value="2">Pasaporte</option>
-                    <option value="3">Otro</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="position">Email</label>
-                  <input type="text" name="email" id="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="position">Apellidos</label>
-                  <input type="text" name="apellidos" id="" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Numero de Referencia</label>
-                  <input type="text" name="nro_telefono" id="" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-                <div class="form-group">
-                  <label for="position">Ciudad</label>
-                  <input type="text" name="ciudad" id="" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-                <div class="form-group">
-                  <label for="position">Nro Documento</label>
-                  <input type="text" name="nro_documento" id="" />
-                </div>
-                <div class="mt-4">
-                  <br>
-                  <a href="#" role="button" class="btn btn-next width-50 mx-auto">Siguiente</a>
-                </div>
-              </div>
+                    <!-- Steps -->
+                    <!-- PARTE 1 -->
+                    <div class="form-step-active form-step col-12 text-dark">
+                        <div class="row ">
+                            <div class="col-md-6" style="border: 1px none red;">
+                                <div class="form-group">
+                                    <label for="username">Nombre(s) Titular</label>
+                                    <input oninput="getData()" type="text" id="nombre_titular_input" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Fecha Nacimiento</label>
+                                    <input type="date" name="fecha_nac" id="fecha_nac" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Pais</label>
+                                    <input type="text" id="pais_or" name="pais_or"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Tipo de Documento</label>
+                                    <select oninput="getData()" class="form-select mySelect"
+                                        id="myselectDocumento" style="width: 100%">
+                                        <option value="DNI">DNI</option>
+                                        <option value="PASAPORTE">PASAPORTE</option>
+                                        <option value="OTRO ">OTRO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="position">Apellidos</label>
+                                    <input type="text" name="apellidos" id="apellidos_input" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Numero de Referencia</label>
+                                    <input type="text" name="nro_telefono" id="nro_telefono" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Ciudad</label>
+                                    <input type="text" name="ciudad" id="" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Nro Documento</label>
+                                    <input oninput="getData()" type="text" name="nro_documento"
+                                        id="nro_documento_input" />
+                                </div>
+                                <div class="mt-4">
+                                    <br>
+                                    <a href="#" role="button" onclick="modalstep1()"
+                                        class="btn btn-next width-50 mx-auto">Siguiente</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PARTE 2 -->
+                    <div class="form-step form-step col-12 text-dark" style="border: 1px none blue;">
+                        <div class="row">
+                            <div class="col-md-6" style="border: 1px none red;">
+                                <div class="pago">
+                                    <label for="metodo">Numero de Huespedes quita esto</label>
+                                    <select class="form-select mySelect" name="nro_personas" id="myselect"
+                                        style="width: 50%">
+                                        <option value="1">1 Persona</option>
+                                        <option value="2">2 Personas</option>
+                                        <option value="3">3 Personas</option>
+                                    </select>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="llegada">Fecha Llegada</label>
+                                    <input type="date" name="fecha_arribo" id="timeStart"
+                                        oninput="calculardiasDiscount()" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="salida">Fecha Salida</label>
+                                    <input type="date" name="fecha_salida" id="timeEnd"
+                                        oninput="calculardiasDiscount()" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="estadia">Estadia</label>
+                                    <input readonly type="text" name="duracion_estadia" id="daysDiscount" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-prev">Anterior</a>
+                            <a href="#" role="button" class="btn btn-next">Siguiente</a>
+                        </div>
+                    </div>
+
+                    <!-- PARTE 3 -->
+                    <div class="form-step text-dark">
+                        <div class="row text-dark align-items-center justify-content-center"
+                            style="border: 2px none red;">
+                            <div class="col-md-6" style="border: 2px none blue;">
+                                <!-- Con Bucle -->
+                                <table class="table table-bordered table-responsive table-dark table-hover">
+                                    <thead class="thead-default thead-light">
+                                        <tr class="text-center">
+                                            <th scope="col" class="text-center">Habitacion</th>
+                                            <th scope="col" class="text-center">estado</th>
+                                            <th class="text-center">precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <% for( let i=0; i < data.length; i++ ) { %>
+
+                                            <tr class="text-center">
+                                                <td hidden class="text-center" id="id_hab" scope="row">
+                                                    <%= data[i].id_habitacion %>
+                                                </td>
+                                                <td class="text-center" id="tipo_hab_input" scope="row">
+                                                    <%= data[i].tipo %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%= data[i].estado %>
+                                                </td>
+                                                <td class="text-center">
+                                                    S/.
+                                                    <%= data[i].precio %>
+                                                </td>
+                                                <% if (data[i].estado==="LIBRE" ) { %>
+
+                                                    <td>
+                                                        <button onclick="cantidad(<%= i+1 %>,0)">-</button>
+                                                        <button onclick="cantidad(<%= i+1 %>,1)">+</button>
+                                                    </td>
+
+                                                    <% }else if(data[i].estado==="OCUPADA" ) { %>
+                                                        <td>
+                                                            <button disabled onclick="cantidad(<%= i+1 %>,0)">-</button>
+                                                            <button disabled onclick="cantidad(<%= i+1 %>,1)">+</button>
+                                                        </td>
+
+                                                        <% } %>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6 text-center mx-auto align-items-center"
+                                style="border: 1px solid #000000;margin-bottom:15px;width:45%;padding:5px;border-radius:10px">
+                                <div class="row text-center" style="border: 2px none brown;width:70%;margin: auto;">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                        <h4>Simple</h4>
+                                    </div>
+                                    <div class="col-md-4 mx-auto">
+                                        <input oninput="sumaHabitaciones()" id="1" type="text" class="text-center"
+                                            value="0">
+                                    </div>
+                                    <div class="col-md-2 mt-4">
+                                    </div>
+                                </div>
+                                <div class="row text-center mx-auto align-items-center"
+                                    style="border: 2px none brown;width:70%;margin: auto;">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                        <h4>Doble</h4>
+                                    </div>
+                                    <div class="col-md-4 mx-auto">
+                                        <input oninput="sumaHabitaciones()" readonly id="2" type="text"
+                                            class="text-center" value="0">
+                                    </div>
+                                    <div class="col-md-2 mt-4">
+                                    </div>
+                                </div>
+                                <div class="row text-center mx-auto align-items-center"
+                                    style="border: 2px none brown;width:70%;margin: auto;">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                        <h4>Triple</h4>
+                                    </div>
+                                    <div class="col-md-4 mx-auto">
+                                        <input oninput="sumaHabitaciones()" readonly id="3" type="text"
+                                            class="text-center" value="0">
+                                    </div>
+                                    <div class="col-md-2 mt-4">
+                                    </div>
+                                </div>
+                                <div class="row text-center mx-auto align-items-center"
+                                    style="border: 2px none brown;width:70%;margin: auto;">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                        <h4>Matrimonial</h4>
+                                    </div>
+                                    <div class="col-md-4 mx-auto">
+                                        <input oninput="sumaHabitaciones()" readonly id="4" type="text"
+                                            class="text-center" value="0">
+                                    </div>
+                                    <div class="col-md-2 mt-4">
+                                    </div>
+                                </div>
+                                <div class="row text-center mx-auto align-items-center"
+                                    style="border: 2px none brown;width:70%;margin: auto;">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                        <h4>Suite</h4>
+                                    </div>
+                                    <div class="col-md-4 mx-auto">
+                                        <input oninput="sumaHabitaciones()" readonly id="5" type="text"
+                                            class="text-center" value="0">
+                                    </div>
+                                    <div class="col-md-2 mt-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-prev">Anterior</a>
+                            <a href="#" class="btn btn-next">Siguiente</a>
+                        </div>
+                    </div>
+
+                    <!-- PARTE 4 -->
+                    <div class="form-step text-dark">
+                        <div class="form-group justify-content-center align-items-center"
+                            style="border: 10px none green;">
+                            <div class="pago">
+
+                                <label for="metodo">Metodo de Pago</label>
+                                <select id="mySelect" onchange="myFunction()">
+                                    <option value="" selected="selected" disabled>Seleccione...</option>
+                                    <option value="Tarjeta">PagoTarjeta</option>
+                                    <option value="Deposito">Deposito</option>
+                                </select>
+                            </div>
+                            <div class="container justify-content-center align-items-center text-center">
+                                <div class="row"
+                                    style="border: 10px none green; align-items: center; justify-content: center;">
+                                    <div id="demo" class="col-md-6"
+                                        style="border: 10px none red;margin:15px;margin-left: 50px;">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-prev">Anterior</a>
+                                <a href="#" class="btn btn-next">Siguiente</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PARTE 5 -->
+                    <div class="form-step form-step col-12 text-dark">
+                        <div class="row ">
+                            <div class="col-md-6" style="border: 1px none red;">
+                                <div class="form-group">
+                                    <label for="username">Titular</label>
+                                    <input readonly type="text" name="nombre_titular" id="nombre_titular" />
+                                </div>
+                                <div class="form-group" id="tiempo-estadia">
+                                    <!-- <label for="dob">Estadia</label>
+                                    <input readonly value="" type="text" name="tiempo-estadia" id="tiempo-estadia" /> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Tipo Habitacion</label>
+                                    <input readonly value="dd" type="text" name="tipoHabitaciones"
+                                        id="tipoHabitaciones" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Numero Documento</label>
+                                    <input readonly value="1563512823" type="text" name="nro_documento"
+                                        id="nro_documento" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Tipo Documento</label>
+                                    <input readonly value="DNI" type="text" name="tipo_documento" id="tipo_documento" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="position">Nro Habitaciones</label>
+                                    <input readonly value="2" type="text" name="nroHabitaciones" id="nroHabitaciones" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Nro Huespedes</label>
+                                    <input readonly value="3" type="text" name="pais" id="pais" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Email</label>
+                                    <input readonly value="juan@gamil.com" type="text" name="ciudad" id="ciudad" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Metodo de Pago</label>
+                                    <input readonly value="Tarjeta" type="text" name="ciudad" id="ciudad" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Total a Pagar</label>
+                                    <input readonly value="S/. 250.00" type="text" name="totalPagar" id="totalPagar" />
+                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-prev">Anterior</a>
+                            <!-- <input readonly type="submit" value="Reservar" class="btn" /> -->
+                            <!-- <input type="submit" value="Reservar" class="btn" /> -->
+                            <button type="submit" class="btn" onclick="modal()">Reservar</button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
-          </div>
-
-          <!-- PARTE 2 -->
-          <div class="form-step form-step col-12 text-dark" style="border: 1px none blue;">
-            <div class="row">
-              <div class="col-md-6" style="border: 1px none red;">
-                <div class="pago">
-                  <label for="metodo">Numero de Huespedes quita esto</label>
-                  <select class="form-select mySelect" name="nro_personas" id="myselect" style="width: 50%">
-                    <option value="1">1 Persona</option>
-                    <option value="2">2 Personas</option>
-                    <option value="3">3 Personas</option>
-                  </select>
-                </div>
-                <br>
-                <div class="pago">
-                  <label for="metodo">Numero Habitaciones esto tambien</label>
-                  <select class="form-select mySelect" name="nro_habitaciones" id="myselect" style="width: 50%">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="llegada">Fecha Llegada</label>
-                  <input type="date" name="fecha_arribo" id="timeStart" oninput="calculardiasDiscount()" />
-                </div>
-                <div class="form-group">
-                  <label for="salida">Fecha Salida</label>
-                  <input type="date" name="fecha_salida" id="timeEnd" oninput="calculardiasDiscount()" />
-                </div>
-                <div class="form-group">
-                  <label for="estadia">Estadia</label>
-                  <input readonly type="text" name="duracion_estadia" id="daysDiscount" />
-                </div>
-              </div>
-            </div>
-            <div class="btns-group">
-              <a href="#" class="btn btn-prev">Anterior</a>
-              <a href="#" class="btn btn-next">Siguiente</a>
-            </div>
-          </div>
-
-          <!-- PARTE 3 -->
-          <div class="form-step text-dark">
-            <div class="row text-dark" style="border: 2px none red;">
-              <div class="col-md-6" style="border: 2px none blue;">
-                <!-- Con Bucle -->
-                <table class="table table-bordered table-responsive table-dark table-hover">
-                  <thead class="thead-default thead-light">
-                    <tr class="text-center">
-                      <th scope="col" class="text-center">Habitacion</th>
-                      <th scope="col" class="text-center">estado</th>
-                      <th class="text-center">precio</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <% for( let i=0; i < data.length; i++ ) { %>
-
-                      <tr class="text-center">
-                        <td class="text-center" scope="row">
-                          <%= data[i].tipo %>
-                        </td>
-                        <td class="text-center">
-                          <%= data[i].estado %>
-                        </td>
-                        <td class="text-center">
-                          S/. <%= data[i].precio %>
-                        </td>
-                        <% if (data[i].estado==="LIBRE" ) { %>
-
-                          <td>
-                            <button onclick="cantidad(<%= i+1 %>,0)">-</button>
-                            <button onclick="cantidad(<%= i+1 %>,1)">+</button>
-                          </td>
-
-                          <% }else if(data[i].estado==="OCUPADA" ) { %>
-                            <td>
-                              <button disabled onclick="cantidad(<%= i+1 %>,0)">-</button>
-                              <button disabled onclick="cantidad(<%= i+1 %>,1)">+</button>
-                            </td>
-
-                            <% } %>
-                      </tr>
-                      <% } %>
-
-
-
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-md-6 text-center mx-auto"
-                style="border: 1px solid #000000;margin-bottom:15px;padding:5px;border-radius:10px">
-                <div class="row text-center" style="border: 2px none brown;">
-                  <div class="col-md-2">
-                  </div>
-                  <div class="col-md-4">
-                    <h4>Simple</h4>
-                  </div>
-                  <div class="col-md-4 mx-auto">
-                    <input id="1" type="text" class="text-center" value="0">
-                  </div>
-                  <div class="col-md-2 mt-4">
-                  </div>
-                </div>
-                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2">
-                  </div>
-                  <div class="col-md-4">
-                    <h4>Doble</h4>
-                  </div>
-                  <div class="col-md-4 mx-auto">
-                    <input readonly id="2" type="text" class="text-center" value="0">
-                  </div>
-                  <div class="col-md-2 mt-4">
-                  </div>
-                </div>
-                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2">
-                  </div>
-                  <div class="col-md-4">
-                    <h4>Triple</h4>
-                  </div>
-                  <div class="col-md-4 mx-auto">
-                    <input readonly id="3" type="text" class="text-center" value="0">
-                  </div>
-                  <div class="col-md-2 mt-4">
-                  </div>
-                </div>
-                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2">
-                  </div>
-                  <div class="col-md-4">
-                    <h4>Matrimonial</h4>
-                  </div>
-                  <div class="col-md-4 mx-auto">
-                    <input readonly id="4" type="text" class="text-center" value="0">
-                  </div>
-                  <div class="col-md-2 mt-4">
-                  </div>
-                </div>
-                <div class="row text-center mx-auto align-items-center" style="border: 2px none brown;">
-                  <div class="col-md-2">
-                  </div>
-                  <div class="col-md-4">
-                    <h4>Suite</h4>
-                  </div>
-                  <div class="col-md-4 mx-auto">
-                    <input readonly id="5" type="text" class="text-center" value="0">
-                  </div>
-                  <div class="col-md-2 mt-4">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="btns-group">
-              <a href="#" class="btn btn-prev">Anterior</a>
-              <a href="#" class="btn btn-next">Siguiente</a>
-            </div>
-          </div>
-
-          <!-- PARTE 4 -->
-          <div class="form-step text-dark">
-            <div class="form-group justify-content-center align-items-center" style="border: 10px none green;">
-              <div class="pago">
-                <label for="metodo">Metodo de Pago</label>
-                <select id="mySelect" onchange="myFunction()">
-                  <option value="" selected="selected" disabled>Seleccione...</option>
-                  <option value="Tarjeta">PagoTarjeta</option>
-                  <option value="Deposito">Deposito</option>
-                </select>
-              </div>
-              <div class="container justify-content-center align-items-center text-center">
-                <div class="row" style="border: 10px none green; align-items: center; justify-content: center;">
-                  <div id="demo" class="col-md-6" style="border: 10px none red;margin:15px;margin-left: 50px;">
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="btns-group">
-                <a href="#" class="btn btn-prev">Anterior</a>
-                <a href="#" class="btn btn-next">Siguiente</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PARTE 5 -->
-          <div class="form-step form-step col-12 text-dark">
-            <div class="row ">
-              <div class="col-md-6" style="border: 1px none red;">
-                <div class="form-group">
-                  <label for="username">Titular</label>
-                  <input readonly value="Juan Perez" type="text" name="nombre_titular" id="nombre_titular" />
-                </div>
-                <div class="form-group">
-                  <label for="dob">Fecha Arribo</label>
-                  <input readonly type="date" name="fecha_arribo" id="fecha_arribo" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Fecha Salida</label>
-                  <input readonly type="date" name="fecha_salida" id="fecha_salida" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Tipo Habitacion</label>
-                  <input readonly value="Matrimonial - Simple" type="text" name="email" id="email" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Numero Documento</label>
-                  <input readonly value="1563512823" type="text" name="email" id="email" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="position">Nro Habitaciones</label>
-                  <input readonly value="2" type="text" name="apellidos" id="apellidos" />
-                </div>
-                <div class="form-group">
-                  <label for="position">Nro Huespedes</label>
-                  <input readonly value="3" type="text" name="pais" id="pais" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-                <div class="form-group">
-                  <label for="position">Email</label>
-                  <input readonly value="juan@gamil.com" type="text" name="ciudad" id="ciudad" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-                <div class="form-group">
-                  <label for="position">Metodo de Pago</label>
-                  <input readonly value="Tarjeta" type="text" name="ciudad" id="ciudad" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-                <div class="form-group">
-                  <label for="position">Total a Pagar</label>
-                  <input readonly value="S/. 250.00" type="text" name="ciudad" id="ciudad" />
-                  <!-- aGREGAR EN BD Pais - Ciudad -->
-                </div>
-              </div>
-            </div>
-            <div class="btns-group">
-              <a href="#" class="btn btn-prev">Anterior</a>
-              <!-- <input readonly type="submit" value="Reservar" class="btn" /> -->
-              <!-- <input type="submit" value="Reservar" class="btn" /> -->
-              <button type="submit" class="btn" onclick="modal()">Reservar</button>
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <br><br><br><br><br><br><br> <br>
+            <br><br><br><br><br><br><br> <br>
+        </div>
     </div>
-  </div>
-
-  <script>
-    function modal() {
-      Swal.fire({
-        title: "Reserva",
-        text: 'Reserva Realizada Satisfactoriamente',
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 1800
-      }).then(() => {
-        window.location = '/'
-      })
-    }
-  </script>
 
 
-  <%- include ('./layouts/footer.ejs') %>
+
+    <%- include ('./layouts/footer.ejs') %>
