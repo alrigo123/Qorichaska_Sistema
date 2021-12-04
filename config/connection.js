@@ -3,7 +3,7 @@ const conex = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'cjmxc100',
-  database: 'database',
+  database: 'dbreserva',
   /*
       host: 'bwuu3e9kaid8qkawouep-mysql.services.clever-cloud.com',
       user: 'um7hmnsl1mmq7opq',

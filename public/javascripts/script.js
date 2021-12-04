@@ -38,14 +38,16 @@
   })
 })(jQuery)
 
-function GetValue(){
+function GetValue() {
   //La fecha es de tipo Date
-  var timeStart = document.getElementById('timeStart').value;
-  var timeEnd = document.getElementById('timeEnd').value;
-document.getElementById('tiempo-estadia').innerHTML = `
+  var timeStart = document.getElementById('timeStart').value
+  var timeEnd = document.getElementById('timeEnd').value
+
+
+  
+  document.getElementById('tiempo-estadia').innerHTML = `
 <label for="dob">Estadia</label>
-<input readonly value="" type="text" name="tiempo-estadia" id="tiempo-estadia" />
-from: <strong> ${timeStart} </strong>   to:   <strong> ${timeEnd} </strong>`;
+<input readonly value="from:  ${timeStart}   to:   ${timeEnd}" type="text" name="tiempo-estadia" id="tiempo-estadia" />`
 }
 
 // To calculate the days transcurred between two dates

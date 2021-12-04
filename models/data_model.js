@@ -3,7 +3,6 @@ module.exports = {
     await conex.query('SELECT * FROM thabitacion', foo)
   },
 
-  savaData(conex, foo) {
-    
+  savaData(conex,bool, foo) {
   },
 }

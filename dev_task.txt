@@ -1,0 +1,17 @@
+* modals to verify empty inputs [all steps]
+* born date validate if is lower than 18 years
+* get huespedes value  [step 2]
+* block dates before the current date [step2]
+* change estadia to varchar ("10 dias") [step 2]
+* make that numerical  value of the rooms go instantly in the reserva form [step 3]
+* type of room add in form (verify) [step 3]
+* in the checkbox get price [step 4]
+* modify pay (deposito) [step 4]
+* get types of room [step 5]
+* add other inputs ? [step 5]
+* transform form in pdf
+* send pdf to client email
+
+Additional 
+
+*login
