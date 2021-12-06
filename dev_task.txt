@@ -1,5 +1,6 @@
 * modals to verify empty inputs [all steps]
-* born date validate if is lower than 18 years
+* born date validate if is lower than 18 years [step 1]
+* length of nro document less than 8 [step 1]
 * get huespedes value  [step 2]
 * block dates before the current date [step2]
 * change estadia to varchar ("10 dias") [step 2]
@@ -15,3 +16,5 @@
 Additional 
 
 *login
+
+

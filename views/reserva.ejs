@@ -19,18 +19,22 @@
                     <div class="form-step-active form-step col-12 text-dark">
                         <div class="row ">
                             <div class="col-md-6" style="border: 1px none red;">
+
                                 <div class="form-group">
                                     <label for="username">Nombre(s) Titular</label>
                                     <input oninput="getData()" type="text" id="nombre_titular_input" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="dob">Fecha Nacimiento</label>
                                     <input type="date" name="fecha_nac" id="fecha_nac" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Pais</label>
-                                    <input type="text" id="pais_or" name="pais_or" />
+                                    <input type="text" name="pais_or" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Tipo de Documento</label>
                                     <select oninput="getData()" class="form-select mySelect" id="myselectDocumento"
@@ -40,70 +44,83 @@
                                         <option value="OTRO ">OTRO</option>
                                     </select>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Email</label>
-                                    <input type="text" name="email" id="email" />
+                                    <input type="text" id="email_input" />
                                 </div>
+
                             </div>
                             <div class="col-md-6">
+
                                 <div class="form-group">
                                     <label for="position">Apellidos</label>
                                     <input oninput="getData()" type="text" id="apellidos_input" />
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="position">Numero de Referencia</label>
+                                    <label for="position">Número de Referencia</label>
                                     <input type="text" name="nro_telefono" id="nro_telefono" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Ciudad</label>
                                     <input type="text" name="ciudad" id="" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="position">Nro Documento</label>
-                                    <input oninput="getData()" type="text" name="nro_documento"
-                                        id="nro_documento_input" />
+                                    <label for="position">Número Documento</label>
+                                    <input oninput="getData()" type="text" id="nro_documento_input" />
                                 </div>
+
                                 <div class="mt-4">
                                     <br>
                                     <a href="#" role="button" onclick="modalstep1()"
                                         class="btn btn-next width-50 mx-auto">Siguiente</a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
                     <!-- PARTE 2 -->
-                    <div class="form-step form-step col-12 text-dark" style="border: 1px none blue;">
+                    <div class="form-step form-step col-12 text-dark">
                         <div class="row">
-                            <div class="col-md-6" style="border: 1px none red;">
+                            <div class="col-md-6">
+
                                 <div class="pago">
-                                    <label for="metodo">Numero de Huespedes quita esto</label>
-                                    <select class="form-select mySelect" name="nro_personas" id="myselect"
+                                    <label for="metodo">Numero de Huespedes</label>
+                                    <select class="form-select mySelect" id="myselectHuespedes"
                                         style="width: 50%">
                                         <option value="1">1 Persona</option>
                                         <option value="2">2 Personas</option>
                                         <option value="3">3 Personas</option>
+                                        <option value="4">4 Personas</option>
+                                        <option value="5">5 Personas</option>
                                     </select>
                                 </div>
+
                                 <br>
                             </div>
                             <div class="col-md-6">
+
                                 <div class="form-group">
                                     <label for="llegada">Fecha Llegada</label>
                                     <input type="date" name="fecha_arribo" id="timeStart"
                                         oninput="calculardiasDiscount()" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="salida">Fecha Salida</label>
                                     <input type="date" name="fecha_salida" id="timeEnd"
                                         oninput="calculardiasDiscount()" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="estadia">Estadia</label>
                                     <input readonly type="text" name="duracion_estadia" id="daysDiscount" />
                                 </div>
+
                             </div>
                         </div>
                         <div class="btns-group">
@@ -114,9 +131,8 @@
 
                     <!-- PARTE 3 -->
                     <div class="form-step text-dark">
-                        <div class="row text-dark align-items-center justify-content-center"
-                            style="border: 2px none red;">
-                            <div class="col-md-6" style="border: 2px none blue;">
+                        <div class="row text-dark align-items-center justify-content-center">
+                            <div class="col-md-6">
                                 <!-- Con Bucle -->
                                 <table class="table table-bordered table-responsive table-dark table-hover">
                                     <thead class="thead-default thead-light">
@@ -245,35 +261,34 @@
 
                     <!-- PARTE 4 -->
                     <div class="form-step text-dark">
-
-
                         <div class="form-group justify-content-center align-items-center">
                             <div class="row">
                                 <div class="col-md-6" id="col_conte">
+
                                     <div class="col-md-6 text-center preadelanto" id="check" name="">
-
                                         <label for="vehicle1">Pre Adelanto S/.250</label>
-
+                                        <!-- probar con si agarra o con cutoa total el label o un input-->
                                         <input type="checkbox" id="pre_adelanto_check" name="vehicle1" value="Bike">
-
                                     </div>
+
                                     <div class="col-md-6 text-center cuotatotal" id="check" name="">
-
-                                        <label for="vehicle1">Cuota Total S/.350</label>
-
+                                        <label for="vehicle1">Cuota Total S/. 350</label>
+                                        <!-- probar con si agarra -->
                                         <input type="checkbox" id="cuota_total_check" name="vehicle1" value="Bike">
-
                                     </div>
+
                                 </div>
                                 <div class="col-md-6">
+
                                     <div class="pago">
                                         <label for="metodo">Metodo de Pago</label>
-                                        <select id="mySelect" onchange="myFunction()">
+                                        <select id="mySelect" oninput="getData()" onchange="myFunction()" id="myselectPago">
                                             <option value="" selected="selected" disabled>Seleccione...</option>
-                                            <option value="Tarjeta">PagoTarjeta</option>
-                                            <option value="Deposito">Deposito</option>
+                                            <option value="TARJETA">TARJETA</option>
+                                            <option value="DEPOSITO EFECTIVO">DEPOSITO EFECTIVO</option>
                                         </select>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -293,58 +308,72 @@
                     <div class="form-step form-step col-12 text-dark">
                         <div class="row ">
                             <div class="col-md-6" style="border: 1px none red;">
+
                                 <div class="form-group">
                                     <label for="username">Titular</label>
                                     <input readonly type="text" name="nombre_titular" id="nombre_titular" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="username">Apellidos</label>
                                     <input readonly type="text" name="apellidos" id="apellidos" />
                                 </div>
+
                                 <div class="form-group" id="tiempo-estadia">
-                                    <!-- <label for="dob">Estadia</label>
-                                    <input readonly value="" type="text" name="tiempo-estadia" id="tiempo-estadia" /> -->
+                                    <!--   <label for="dob">Estadia</label>
+                                  <input readonly value="" type="text" name="tiempo-estadia" id="tiempo-estadia" /> -->
                                 </div>
-                                <div class="form-group" id="tipoHabitaciones">
+
+                                <!-- <div class="form-group" id="tipoHabitaciones">
                                     <label for="position">Tipo Habitacion</label>
                                     <input readonly value="dd" type="text" name="tipoHabitaciones"
                                         id="tipoHabitaciones" />
-                                </div>
+                                </div> -->
+
                                 <div class="form-group">
                                     <label for="position">Numero Documento</label>
-                                    <input readonly value="1563512823" type="text" name="nro_documento"
+                                    <input readonly value="" type="text" name="nro_documento"
                                         id="nro_documento" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Tipo Documento</label>
-                                    <input readonly value="DNI" type="text" name="tipo_documento" id="tipo_documento" />
+                                    <input readonly value="" type="text" name="tipo_documento" id="tipo_documento" />
                                 </div>
+
                             </div>
                             <div class="col-md-6">
+
                                 <div class="form-group">
                                     <label for="position">Nro Habitaciones</label>
-                                    <input readonly value="2" type="text" name="nroHabitaciones" id="nroHabitaciones" />
+                                    <input readonly value="" type="text" name="nro_habitaciones" id="nroHabitaciones" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Nro Huespedes</label>
-                                    <input readonly value="3" type="text" name="pais" id="pais" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                    <input readonly value="" type="text" name="nro_personas" id="nro_personas" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Email</label>
-                                    <input readonly value="juan@gamil.com" type="text" name="ciudad" id="ciudad" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                    <input readonly value="" type="text" name="email" id="email_data" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Metodo de Pago</label>
-                                    <input readonly value="Tarjeta" type="text" name="ciudad" id="ciudad" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                    <input readonly value="" type="text" name="metodo" id="metodo" />
                                 </div>
+
                                 <div class="form-group">
                                     <label for="position">Total a Pagar</label>
-                                    <input readonly value="S/. 250.00" type="text" name="totalPagar" id="totalPagar" />
-                                    <!-- aGREGAR EN BD Pais - Ciudad -->
+                                    <input readonly value="" type="text" name="cuota_total" id="totalPagar" />
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="position">Pre Adelanto</label>
+                                    <input readonly value="" type="text" name="preadelanto" id="preadelanto" />
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="btns-group">
@@ -360,7 +389,5 @@
             <br><br><br><br><br><br><br> <br>
         </div>
     </div>
-
-
 
     <%- include ('./layouts/footer.ejs') %>
