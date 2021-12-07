@@ -1,6 +1,6 @@
 function myFunction() {
   var x = document.getElementById('mySelect').value
-  if (x === 'Tarjeta') {
+  if (x === 'TARJETA') {
     document.getElementById('demo').innerHTML = ` 
       <div class="form-group">
       <label for="" class="form-label">Nombre Propietaro</label>
@@ -18,7 +18,7 @@ function myFunction() {
       <label for="" class="form-label">CVV</label>
       <input type="text" name="" id="input_pago" placeholder="">
       </div>`
-  } else if (x === 'Deposito') {
+  } else if (x === 'DEPOSTIVO EFECTIVO') {
     document.getElementById('demo').innerHTML = `
       <div class="form-group">
       <label for="" class="form-label">Numero Cuenta BCP</label>
@@ -63,15 +63,21 @@ function getData() {
   let apellidos_input = document.getElementById('apellidos_input').value
   let nro_documento_input = document.getElementById('nro_documento_input').value
   let combo_tipo_documento_input = document.getElementById('myselectDocumento') //para obtner el texto
-  
-  let combo_tipo_pago_input = document.getElementById('myselectPago') //para obtner el texto
 
   //let tipo_hab_input = document.getElementById('tipo_hab_input').value
 
   let email_input = document.getElementById('email_input').value
-  let tipo_documento_input = combo_tipo_documento_input.options[combo_tipo_documento_input.selectedIndex].text
+  let tipo_documento_input =
+    combo_tipo_documento_input.options[combo_tipo_documento_input.selectedIndex]
+      .text
 
-  let myselectHuespedes_input = document.getElementById('myselectHuespedes').value //para obtner el valor
+  let myselectHuespedes_input = document.getElementById('myselectHuespedes')
+    .value //para obtner el valor
+
+  let combo_tipo_pago_input = document.getElementById('mySelect') //para obtner el texto
+
+  let tipo_pago_input =
+    combo_tipo_pago_input.options[combo_tipo_pago_input.selectedIndex].text
 
   let simple = parseInt(document.getElementById('1').value)
   let doble = parseInt(document.getElementById('2').value)
@@ -98,6 +104,8 @@ function getData() {
   document.getElementById('totalPagar').value = totalPagar
   document.getElementById('preadelanto').value = preadelanto
 
+  document.getElementById('metodo').value = tipo_pago_input
+
   /*
   document.getElementById('preadelanto').innerHTML = `
   <label for="dob">Estadia</label>
@@ -108,7 +116,6 @@ function getData() {
   <input readonly value="from:  ${cuota_total}" type="text" name="tiempo-estadia" id="tiempo-estadia" />`
   
 */
-
 }
 
 //MODALES
@@ -228,6 +235,12 @@ function comprueba() {
   } else {
     document.getElementById('pre_adelanto_check').disabled = false
   }
+}
+
+function getPagoData() {
+  //let tipo_hab_input = document.getElementById('tipo_hab_input').value
+
+ 
 }
 
 //PRICE IN THE CHECKBOX

@@ -90,8 +90,7 @@
 
                                 <div class="pago">
                                     <label for="metodo">Numero de Huespedes</label>
-                                    <select class="form-select mySelect" id="myselectHuespedes"
-                                        style="width: 50%">
+                                    <select class="form-select mySelect" id="myselectHuespedes" style="width: 50%">
                                         <option value="1">1 Persona</option>
                                         <option value="2">2 Personas</option>
                                         <option value="3">3 Personas</option>
@@ -282,7 +281,7 @@
 
                                     <div class="pago">
                                         <label for="metodo">Metodo de Pago</label>
-                                        <select id="mySelect" oninput="getData()" onchange="myFunction()" id="myselectPago">
+                                        <select id="mySelect" oninput="getData()" onchange="myFunction()">
                                             <option value="" selected="selected" disabled>Seleccione...</option>
                                             <option value="TARJETA">TARJETA</option>
                                             <option value="DEPOSITO EFECTIVO">DEPOSITO EFECTIVO</option>
@@ -308,7 +307,6 @@
                     <div class="form-step form-step col-12 text-dark">
                         <div class="row ">
                             <div class="col-md-6" style="border: 1px none red;">
-
                                 <div class="form-group">
                                     <label for="username">Titular</label>
                                     <input readonly type="text" name="nombre_titular" id="nombre_titular" />
@@ -332,8 +330,7 @@
 
                                 <div class="form-group">
                                     <label for="position">Numero Documento</label>
-                                    <input readonly value="" type="text" name="nro_documento"
-                                        id="nro_documento" />
+                                    <input readonly value="" type="text" name="nro_documento" id="nro_documento" />
                                 </div>
 
                                 <div class="form-group">
@@ -373,14 +370,18 @@
                                     <label for="position">Pre Adelanto</label>
                                     <input readonly value="" type="text" name="preadelanto" id="preadelanto" />
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="btns-group">
-                            <a href="#" class="btn btn-prev">Anterior</a>
+                            <a href="#" class="btn btn-prev" style="width:70%;">Anterior</a>
                             <!-- <input readonly type="submit" value="Reservar" class="btn" /> -->
                             <!-- <input type="submit" value="Reservar" class="btn" /> -->
-                            <button type="submit" class="btn" onclick="modal()">Reservar</button>
+                            <button type="submit" class="btn" onclick="modal()" style="width:70%;">Reservar</button>
+                            <a href="javascript:;" onclick="window.print()" id="btnImprimir"
+                                class="btn btn-md btn-danger hidden-print" style="background-color:green;
+                            border:1px solid green;width:50%;">Descargar</a>
+
                         </div>
                     </div>
 
@@ -389,5 +390,12 @@
             <br><br><br><br><br><br><br> <br>
         </div>
     </div>
+    <script>
+        $('#btnImprimir').on('click', function () {
 
+            window.print();
+            return false;
+
+        })
+    </script>
     <%- include ('./layouts/footer.ejs') %>

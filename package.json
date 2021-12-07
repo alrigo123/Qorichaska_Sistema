@@ -21,7 +21,8 @@
     "express-session": "^1.17.2",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
-    "node-env-file": "^0.1.8"
+    "node-env-file": "^0.1.8",
+    "pdfkit": "^0.13.0"
   },
   "bugs": {
     "url": "https://github.com/alrigo123/Qorichaska_Sistema/issues"

@@ -236,3 +236,20 @@ function myFunction() {
   
   //PRICE IN THE CHECKBOX
   
+
+
+
+
+
+
+
+  function getPagoData() {
+    let combo_tipo_pago_input = document.getElementById('mySelect') //para obtner el texto
+  
+    //let tipo_hab_input = document.getElementById('tipo_hab_input').value
+  
+    let tipo_pago_input =
+      combo_tipo_pago_input.options[combo_tipo_pago_input.selectedIndex].text
+  
+    //document.getElementById('metodo').value = tipo_pago_input
+  }
