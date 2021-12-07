@@ -18,23 +18,15 @@ function myFunction() {
       <label for="" class="form-label">CVV</label>
       <input type="text" name="" id="input_pago" placeholder="">
       </div>`
-  } else if (x === 'DEPOSTIVO EFECTIVO') {
+  } else if (x === 'DEPOSITO EFECTIVO') {
     document.getElementById('demo').innerHTML = `
       <div class="form-group">
       <label for="" class="form-label">Numero Cuenta BCP</label>
-      <input type="text" placeholder="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" placeholder="" aria-describedby="helpId">
+      <input readonly type="text" value="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" placeholder="" aria-describedby="helpId">
       </div>
       <div class="form-group">
-      <label for="" class="form-label">Tipo de Operacion</label>
-      <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-      </div>
-      <div class="form-group">
-      <label for="" class="form-label">Hora y Fecha del Pago</label>
-      <input type="datetime" name="" id="input_pago" placeholder="" aria-describedby="helpId">
-      </div>
-      <div class="form-group">
-      <label for="" class="form-label">Numero de Operacion</label>
-      <input type="text" name="" id="input_pago" placeholder="" aria-describedby="helpId">
+      <label for="" class="form-label">Fecha Limite de Deposito</label>
+      <input readonly type="text" name="" id="input_pago" value="2021-12-11" aria-describedby="helpId">
       </div>`
   } else {
     document.getElementById('demo').innerHTML = 'ERROR' + x
@@ -46,6 +38,9 @@ function cantidad(id_input, operacion) {
   event.preventDefault()
   var numero = $('#' + id_input).val()
   if (operacion == '1') {
+    if (numero >2) {
+      numero = 2
+    }
     numero++
   } else {
     if (numero <= 0) {
@@ -226,6 +221,7 @@ test.addEventListener('change', comprueba, false)
 function comprueba() {
   if (checkbox.checked) {
     document.getElementById('cuota_total_check').disabled = true
+    //document.getElementById('cuotatoal').value = CUOTA_TOTAL   -- example
   } else {
     document.getElementById('cuota_total_check').disabled = false
   }

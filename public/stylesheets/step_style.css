@@ -180,6 +180,21 @@ height:17px;
   align-items: center;
 }
 
+.button-cantidad{
+  background-color: #252525;
+  color: #fff;
+  font-weight: bold;
+  width: 25px;
+}
+.button-block{
+  background-color: #252525;
+  color: #fff;
+  font-weight: bold;
+  width: 25px;
+  opacity: 0.5;
+}
+
+
 #input_pago{
 background: rgb(235, 233, 233);
 }
