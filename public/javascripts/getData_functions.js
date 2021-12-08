@@ -26,13 +26,14 @@ function getData() {
     let triple = parseInt(document.getElementById('3').value)
     let matrimonial = parseInt(document.getElementById('4').value)
     let suite = parseInt(document.getElementById('5').value)
-    let total = simple + doble + triple + matrimonial + suite
+    let totalHabit = simple + doble + triple + matrimonial + suite
+
     let totalPagar =
       simple * 100 + doble * 150 + triple * 200 + matrimonial * 250 + suite * 350
   
     const valor = 'SIMPLE'
   
-    let preadelanto = totalPagar / 2
+    let preadelanto = parseFloat(totalPagar / 2)
   
     document.getElementById('nombre_titular').value = nombre_titular_input
     document.getElementById('apellidos').value = apellidos_input
@@ -42,22 +43,17 @@ function getData() {
   
     document.getElementById('nro_personas').value = myselectHuespedes_input
   
-    document.getElementById('nroHabitaciones').value = total
+    document.getElementById('nroHabitaciones').value = totalHabit
     document.getElementById('totalPagar').value = totalPagar
     document.getElementById('preadelanto').value = preadelanto
   
     document.getElementById('metodo').value = tipo_pago_input
   
-    /*
-    document.getElementById('preadelanto').innerHTML = `
-    <label for="dob">Estadia</label>
-    <input readonly value="from:  ${preadelanto}" type="text" name="tiempo-estadia" id="tiempo-estadia" />`
-  
-    document.getElementById('cuotatotal').innerHTML = `
-    <label for="dob">Estadia</label>
-    <input readonly value="from:  ${cuota_total}" type="text" name="tiempo-estadia" id="tiempo-estadia" />`
     
-  */
+    document.getElementById('test1').value = preadelanto;
+  
+    document.getElementById('test2').value =totalPagar;
+    
   }
   
   
@@ -73,16 +69,26 @@ function getData() {
   test.addEventListener('change', comprueba, false)
   
   function comprueba() {
+
+    //agregar modales para el pago o checkbox
+
     if (checkbox.checked) {
-      document.getElementById('cuota_total_check').disabled = true
-      //document.getElementById('cuotatoal').value = CUOTA_TOTAL   -- example
+      document.getElementById('cuota_total_check').disabled = true     
     } else {
       document.getElementById('cuota_total_check').disabled = false
+
+      document.getElementById('estado_Reserva').innerHTML = `
+      <label for="position">Estado de Reserva</label>
+      <input readonly value="VALIDADA" type="text" name="estado" id="estado" />`;
     }
   
     if (test.checked) {
       document.getElementById('pre_adelanto_check').disabled = true
     } else {
       document.getElementById('pre_adelanto_check').disabled = false
+
+      document.getElementById('estado_Reserva').innerHTML = `
+      <label for="position">Estado de Reserva</label>
+      <input readonly value="EN ESPERA" type="text" name="estado" id="estado" />`;
     }
   }

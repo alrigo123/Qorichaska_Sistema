@@ -194,6 +194,25 @@ height:17px;
   opacity: 0.5;
 }
 
+#test1{
+text-align: start;
+  width: 20%;
+  display: inline;
+  border: 1px none red;
+  background-color: transparent;
+  font-weight: bold;
+  font-size:15px;
+}
+#test2{
+  text-align: left;
+  width: 20%;
+  display: inline;
+  border: 1px none red;
+  background-color: transparent;
+  font-weight: bold;
+  font-size:15px;
+}
+
 
 #input_pago{
 background: rgb(235, 233, 233);
