@@ -16,23 +16,23 @@
 
                     <!-- Steps -->
                     <!-- PARTE 1 -->
-                    <div class="form-step-active form-step col-12 text-dark">
+                    <div class="form-step form-step col-12 text-dark">
                         <div class="row ">
                             <div class="col-md-6" style="border: 1px none red;">
 
                                 <div class="form-group">
                                     <label for="username">Nombre(s) de Titular</label>
-                                    <input oninput="getData()" type="text" id="nombre_titular_input" required/>
+                                    <input autocomplete="off" oninput="getData()" type="text" id="nombre_titular_input" required/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="dob">Fecha de Nacimiento</label>
-                                    <input type="date" name="fecha_nac" id="fecha_nac" />
+                                    <input autocomplete="off" type="date" name="fecha_nac" id="fecha_nac" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="position">Pais de Origen</label>
-                                    <input type="text" name="pais_or" />
+                                    <input autocomplete="off" type="text" name="pais_or" />
                                 </div>
 
                                 <div class="form-group">
@@ -47,7 +47,7 @@
 
                                 <div class="form-group">
                                     <label for="position">Correo Electronico</label>
-                                    <input type="text" id="email_input" />
+                                    <input autocomplete="off" type="text" id="email_input" />
                                 </div>
 
                             </div>
@@ -129,7 +129,7 @@
                     </div>
 
                     <!-- PARTE 3 -->
-                    <div class="form-step text-dark">
+                    <div class="form-step-active text-dark">
                         <div class="row text-dark align-items-center justify-content-center">
                             <div class="col-md-6">
                                 <!-- Con Bucle -->
@@ -179,8 +179,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-6 text-center mx-auto align-items-center"
-                                style="border: 1px solid #000000;margin-bottom:15px;width:45%;padding:5px;border-radius:10px">
+                            <div class="col-md-2 text-center mx-auto align-items-center count_hab">
+                                <!-- Usar en estilos esta parte de brown -->
                                 <div class="row text-center" style="border: 2px none brown;width:70%;margin: auto;">
                                     <div class="col-md-2">
                                     </div>
@@ -188,7 +188,7 @@
                                         <h4>Simple</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
-                                        <input oninput="sumaHabitaciones()" id="1" type="text" class="text-center"
+                                        <input oninput="sumaHabitaciones()" id="1" type="text" class="input_hab text-center"
                                             value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
@@ -203,7 +203,7 @@
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="2" type="text"
-                                            class="text-center" value="0">
+                                            class="input_hab text-center" value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
                                     </div>
@@ -217,7 +217,7 @@
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="3" type="text"
-                                            class="text-center" value="0">
+                                            class="input_hab text-center" value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
                                     </div>
@@ -231,7 +231,7 @@
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="4" type="text"
-                                            class="text-center" value="0">
+                                            class="input_hab text-center" value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
                                     </div>
@@ -245,7 +245,7 @@
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="5" type="text"
-                                            class="text-center" value="0">
+                                            class="input_hab text-center" value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
                                     </div>

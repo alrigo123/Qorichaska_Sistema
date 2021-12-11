@@ -3,8 +3,10 @@ const path = require("path");
 const morgan = require('morgan');
 const mysql = require('mysql');
 const cookieParser = require('cookie-parser')
+const session  = require('express-session')
 
 const app = express();
+
 
 
 require('dotenv').config();
@@ -29,6 +31,23 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Static Routes
 app.use(express.static(path.join(__dirname, 'public')));
+
+//session
+app.use(session({
+    secret: 'key',
+    resave: true,
+    saveUninitialized: true,
+}))
+
+//cookies Parser
+app.use(cookieParser())
+
+app.use((req, res, next) => {
+  if (!req.user)
+    res.header('Cache-Control', 'private,no-cache,no-store,must-revalidate')
+    next();
+})
+
 
 
 //route index

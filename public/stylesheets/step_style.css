@@ -1,164 +1,172 @@
 :root {
-    --primary-color: rgb(11, 78, 179);
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-.box{
-    border:10px none red;
-    width:100%;
-    border-radius: 0.55rem;
+  --primary-color: rgb(11, 78, 179);
 }
-body{
-    border:10px none green;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-  /* Global Stylings */
 
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  input {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-  }
-  
-  .width-50 {
-    width: 50%;
-  }
-  
-  .ml-auto {
-    margin-left: auto;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  /* Progressbar */
-  .progressbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    counter-reset: step;
-    margin: 2rem 0 4rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    
-  }
-  
-  .progressbar::before,
-  .progress {
-    font-size: 24px;
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 4px;
-    width: 100%;
-    background-color: #dcdcdc;
-    z-index: -1;
-  }
-  
-  .progress {
-    background-color: var(--primary-color);
-    width: 0%;
-    transition: 0.3s;
-  }
-  
-  .progress-step {
-    width: 2.1875rem;
-    height: 2.1875rem;
-    background-color: #252525;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .progress-step::before {
-    counter-increment: step;
-    content: counter(step);
-  }
-  
-  .progress-step::after {
-    content: attr(data-title);
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-  }
+.box {
+  border: 10px none red;
+  width: 100%;
+  border-radius: 0.55rem;
+}
+body {
+  border: 10px none green;
+}
+/* Global Stylings */
 
-  
-  .progress-step-active {
-    background-color: var(--primary-color);
-    color: #f3f3f3;
-  }
-  
-  /* Form */
-  .form {
-    /* width: clamp(320px, 30%, 430px); */
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 14rem;
-    margin-bottom:14rem;    
-    border: 2px solid #ccc;
-    border-radius: 0.55rem;
-    padding: 1.5rem;
-    background-color:rgb(172, 172, 172);
-  }
-  
-  .form-step {
-    display: none;
-    transform-origin: top;
-    animation: animate 0.5s;
-  }
-  
-  .form-step-active {
-    display: block;
-  }
-  
-#mySelect{
+.form {
+  /* width: clamp(320px, 30%, 430px); */
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 14rem;
+  margin-bottom: 14rem;
+  border-radius: 0.55rem;
+  padding: 2.5rem;
+  background-color: rgb(151, 151, 151);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: black;
+  font-size: 15px;
+}
+tr,
+th {
+  color: black;
+  font-size: 15px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  background-color: rgb(230, 227, 227);
+  border-radius: 0.25rem;
+  font-family: "Raleway", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.progressbar::before,
+.progress {
+  font-size: 24px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--primary-color);
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 3rem;
+  height: 3rem;
+  background-color: #252525;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.progress-step-active {
+  background-color: var(--primary-color);
+  color: #f3f3f3;
+}
+
+/* Form */
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+#mySelect {
   border: 1px none blue;
   padding: 0.75rem;
   width: 50%;
   text-align: center;
-  font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
-  font-size:16px;
-  font-weight:bold;
+  font-family: "Questrial", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 }
-.mySelect{
+.mySelect {
   border: 1px none red;
   padding: 0.75rem;
   width: 25%;
   text-align: center;
-  font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
-  font-size:16px;
-  font-weight:bold;
+  font-family: "Questrial", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-#check{
+#check {
   border: 1px solid black;
   padding: 0.75rem;
 }
 
 input[type="checkbox"] {
   margin: auto;
-  width:17px;
-height:17px;
-
+  width: 17px;
+  height: 17px;
 }
 
-#demo{
+#demo {
   border: 2px none black;
   width: 100%;
   margin-top: 3rem;
@@ -166,27 +174,27 @@ height:17px;
   padding: 0.75rem;
 }
 
-#col_conte{
+#col_conte {
   border: 10px none green;
-  margin-top:15px;
+  margin-top: 15px;
 }
 
-.pago{
+.pago {
   border: 1px none blue;
   padding: 0.75rem;
-  font-size:16px;
+  font-size: 16px;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-.button-cantidad{
+.button-cantidad {
   background-color: #252525;
   color: #fff;
   font-weight: bold;
   width: 25px;
 }
-.button-block{
+.button-block {
   background-color: #252525;
   color: #fff;
   font-weight: bold;
@@ -194,63 +202,75 @@ height:17px;
   opacity: 0.5;
 }
 
-#test1{
-text-align: start;
-  width: 20%;
-  display: inline;
-  border: 1px none red;
-  background-color: transparent;
-  font-weight: bold;
-  font-size:15px;
-}
-#test2{
+#test1 {
   text-align: left;
   width: 20%;
   display: inline;
   border: 1px none red;
   background-color: transparent;
   font-weight: bold;
-  font-size:15px;
+  font-size: 15px;
+}
+#test2 {
+  text-align: left;
+  width: 20%;
+  display: inline;
+  border: 1px none red;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 15px;
 }
 
-
-#input_pago{
-background: rgb(235, 233, 233);
+#input_pago {
+  background: rgb(235, 233, 233);
 }
 
-  .input-group {
-    margin: 2rem 0;
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
   }
-  
-  @keyframes animate {
-    from {
-      transform: scale(1, 0);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1, 1);
-      opacity: 1;
-    }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
   }
-  
-  /* Button */
-  .btns-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .btn {
-    padding: 0.75rem;
-    display: block;
-    text-decoration: none;
-    background-color: rgb(0, 0, 0);
-    color: #f3f3f3;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .btn:hover {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
-    color:rgba(144, 144, 144, 0.582);
-  }
+}
+
+/* Button */
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: rgb(58, 58, 58);
+  color: #f3f3f3;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.count_hab {
+  border: 1px none red;
+  margin-bottom: 15px;
+  width: 50%;
+  padding: 5px;
+  border-radius: 10px;
+}
+.input_hab{
+  background-color:rgb(195, 195, 195);
+  width: 75%;
+  margin-top:10px;
+}

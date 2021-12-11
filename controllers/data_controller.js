@@ -4,8 +4,11 @@ const nodemailer = require('nodemailer')
 const controller = {}
 
 function time() {
-  (req, res) => {
-    res.redirect('/')
+  ;(req, res) => {
+    const userSession = req.session.user
+
+    res.clearCookie('jwt')
+    return res.redirect('/')
   }
 }
 
@@ -25,6 +28,8 @@ function date() {
 
 //POST
 controller.view = (req, res) => {
+  const userSession = req.session.user
+
   //const data = req.body
 
   //Cliente
@@ -48,7 +53,7 @@ controller.view = (req, res) => {
   const fecha_salida = req.body.fecha_salida
   const nro_habitaciones = req.body.nro_habitaciones
   const nro_personas = req.body.nro_personas
-  const estado = req.body.estado;
+  const estado = req.body.estado
   const duracion_estadia = req.body.duracion_estadia
 
   //let sql = 'call insertar_datos(?,?,?,?)';
@@ -58,7 +63,7 @@ controller.view = (req, res) => {
   conex.query(sql, true, (error, result, field) => {
     if (error) {
       console.log(error)
-    } else {     
+    } else {
       console.log('Email Enviado a: ' + email)
       let mensaje = `Hola ${titular} ${apellidos} \n\n Su Reserva a sido realizada para el dia ${fecha_arribo} hasta el dia ${fecha_salida} \n\n Gracias por preferirnos`
 
@@ -73,7 +78,7 @@ controller.view = (req, res) => {
       const mailOptions = {
         from: 'basembc04@gmail.com',
         to: email,
-        subject: 'Reserva '+date(),
+        subject: 'Reserva ' + date(),
         text: mensaje,
       }
 
@@ -91,6 +96,8 @@ controller.view = (req, res) => {
   })
 
   setTimeout(time, 0.5) //Para mostrar interfaz inicial
+
+
 }
 
 controller.getRooms = async (req, res) => {

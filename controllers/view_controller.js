@@ -1,3 +1,4 @@
+
 const controller = {}
 
 controller.index = (req, res) => {
@@ -5,7 +6,11 @@ controller.index = (req, res) => {
 }
 
 controller.reserva = (req, res) => {
-  res.render('reserva')
+  req.session.user;
+  const userSession = req.session.user;
+  res.render('reserva',{
+    session : userSession
+  })
 }
 
 module.exports = controller

@@ -20,3 +20,50 @@ Additional
 en el check cuanod este valido enviar este dato en el documente.getElementById().value = igual al inpout que se tenga
 
 
+
+
+
+// 1. Que no deje seleccionar una fecha anterior a la del dia actual
+function diaAnterior(){
+  var timeStart = new Date(document.getElementById('timeStart').value)
+  var actualDate = new Date()
+  if (new Date(actualDate).getTime() > new Date(timeStart).getTime()) {
+    alert('La fecha no puede ser anterior al dia actual')
+    document.getElementById('timeStart').value = ''
+    return false
+  }
+}
+
+// 2. Funcion que a la fecha de hoy se sume 3 dias y se ponga en input
+function sumartresDias(){
+  if (timeStart != null && timeEnd == null) {
+    var hoy = new Date(timeStart)
+    var suma = new Date(hoy.addDays(3))
+    document.getElementById('timeEnd').value = suma
+  }
+}
+
+// 3. que la fecha de nacimiento sea mayor de 18
+function mayorEdad(){
+  var fecha_nac = new Date(document.getElementById('fecha_nac').value)
+  var Edad = calcularEdad(fecha_nac)
+  if(Edad >= 18){
+    return true
+  }
+  else{
+    alert('Usted no es mayor de edad')
+    document.getElementById('fecha_nac').value = ''
+    return false
+  }
+}
+
+function calcularEdad(fecha_nac){
+  var hoy = new Date();
+  var cumpleanos = new Date(fecha_nac);
+  var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+  var m = hoy.getMonth() - cumpleanos.getMonth();
+  if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+      edad--;
+  }
+  return edad;
+}
