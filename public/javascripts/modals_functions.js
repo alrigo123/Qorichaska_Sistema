@@ -41,3 +41,21 @@ function modal() {
         }
       }
   */
+
+
+    function modalstep4() {
+        let nombre_titular_input = document.getElementById('nombre_titular_input').value;
+        let apellido_input = document.getElementById('apellidos_input').value;
+        if (nombre_titular_input === "" || apellido_input === "") {
+          
+          Swal.fire({
+            title: `Alerta`,
+            text: `Debe de Completar Todos los Campos `,
+            icon: 'warning',
+            showConfirmButton: true,
+            timer: false
+          }).then(() => {
+            window.location = '/reserva'
+          })
+        }
+      }
