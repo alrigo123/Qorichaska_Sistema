@@ -86,7 +86,7 @@ function comprueba() {
       <input readonly value="EN ESPERA" type="text" name="estado" id="estado" />`
   }
 }
-
+/*
 function modalstep4() {
 comprueba();
 if (!test.checked && !checkbox.checked) {
@@ -101,5 +101,4 @@ if (!test.checked && !checkbox.checked) {
   })
 }
 }
-
-  
+  */

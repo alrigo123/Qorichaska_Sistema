@@ -42,7 +42,7 @@ function modal() {
       }
   */
 
-
+/*
     function modalstep4() {
         let nombre_titular_input = document.getElementById('nombre_titular_input').value;
         let apellido_input = document.getElementById('apellidos_input').value;
@@ -59,3 +59,4 @@ function modal() {
           })
         }
       }
+      */
