@@ -12,43 +12,53 @@ function date() {
   return (today = mm + '/' + dd + '/' + yyyy)
 }
 
+function number(){
+  var a = document.getElementById('input_pago').value;
+
+  var res = a.replace(/(a{4})(\B)/g,"$1-");
+  
+  console.log(res);
+}
+
+
+
 function myFunction() {
   var x = document.getElementById('mySelect').value
   if (x === 'TARJETA') {
     document.getElementById('demo').innerHTML = ` 
       <div class="form-group">
       <label for="" class="form-label">Nombre Propietaro</label>
-      <input type="text" name="" id="input_pago" placeholder="">
+      <input class="text-center" type="text" name="" id="input_pago" placeholder="Juan Perez">
       </div>
       <div class="form-group">
       <label for="" class="form-label">Numero Tarjeta</label>
-      <input type="text" name="" id="input_pago" placeholder="">
+      <input class="text-center" type="text" name="" id="input_pago" maxlength="16" placeholder="0000000000000">
       </div>
       <div class="form-group">
       <label for="" class="form-label">Fecha Vencimiento</label>
-      <input type="date" name="" id="input_pago"  placeholder="">
+      <input class="text-center" type="date" name="" id="input_pago"  placeholder="">
       </div>
       <div class="form-group">
       <label for="" class="form-label">CVV</label>
-      <input type="text" name="" id="input_pago" placeholder="">
+      <input class="text-center" type="text" name="" id="input_pago" maxlength="3" placeholder="123">
       </div>`
   } else if (x === 'DEPOSITO EFECTIVO') {
     document.getElementById('demo').innerHTML = `
       <div class="form-group">
       <label for="" class="form-label">Numero Cuenta BCP</label>
-      <input readonly type="text" value="XXX-XXXX-XXXX-XXXX" name="" id="input_pago" placeholder="" aria-describedby="helpId">
+      <input class="text-center" readonly type="text" value="123-456-7890-0000" name="" id="input_pago" placeholder="" aria-describedby="helpId">
       </div>
       <div class="form-group">
       <label for="" class="form-label">Fecha Limite de Deposito</label>
-      <input readonly type="text" name="" id="fecha_limite" value="${date()}" aria-describedby="helpId">
+      <input class="text-center" readonly type="text" name="" id="fecha_limite" value="${date()}" aria-describedby="helpId">
       </div>
       <div class="form-group">
       <label for="" class="form-label">Si no realiza el pago hasta la fecha
-      <input readonly type="text" id="fecha_limite" value="${date()}" style="text-align:left;
-      width: 11%;
+      <input class="text-center" readonly type="text" id="fecha_limite" value="${date()}" style="text-align:left;
+      width: 15%;
       display: inline;
-      border: 1px solid red;
-      background-color: transparent;font-weight: bold;font-size:14px;color:red;">su reserva sera anulada</label>
+      border: 1px none red;
+      background-color: transparent;font-weight: bold;font-size:14px;color:#A40000;">su reserva sera anulada</label>
       </div>
       `
   } else {
@@ -74,8 +84,5 @@ function cantidad(id_input, operacion) {
   $('#' + id_input).val(numero)
 }
 
-function getPagoData() {
-  //let tipo_hab_input = document.getElementById('tipo_hab_input').value
-}
 
 //PRICE IN THE CHECKBOX

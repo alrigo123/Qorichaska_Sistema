@@ -22,7 +22,8 @@
 
                                 <div class="form-group">
                                     <label for="username">Nombre(s) de Titular</label>
-                                    <input autocomplete="off" oninput="getData()" type="text" id="nombre_titular_input" required/>
+                                    <input autocomplete="off" oninput="getData()" type="text" id="nombre_titular_input"
+                                        required />
                                 </div>
 
                                 <div class="form-group">
@@ -32,7 +33,7 @@
 
                                 <div class="form-group">
                                     <label for="position">Pais de Origen</label>
-                                    <input autocomplete="off" type="text" name="pais_or" />
+                                    <input autocomplete="off" type="text" name="pais_or" id="pais_or" />
                                 </div>
 
                                 <div class="form-group">
@@ -46,8 +47,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="position">Correo Electronico</label>
-                                    <input autocomplete="off" type="text" id="email_input" required/>
+                                    <label for="position" >Correo Electronico</label>
+                                    <input autocomplete="off" type="text" id="email_input" required />
                                 </div>
 
                             </div>
@@ -105,26 +106,26 @@
 
                                 <div class="form-group">
                                     <label for="llegada">Fecha de Llegada</label>
-                                    <input type="date" name="fecha_arribo" id="timeStart"
+                                    <input class="text-center" type="date" name="fecha_arribo" id="timeStart"
                                         oninput="calculardiasDiscount()" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="salida">Fecha de Salida</label>
-                                    <input type="date" name="fecha_salida" id="timeEnd"
+                                    <input class="text-center" type="date" name="fecha_salida" id="timeEnd"
                                         oninput="calculardiasDiscount()" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="estadia">Tiempo de Estadia</label>
-                                    <input readonly type="text" name="duracion_estadia" id="daysDiscount" />
+                                    <input class="text-center" readonly type="text" name="duracion_estadia" id="daysDiscount" />
                                 </div>
 
                             </div>
                         </div>
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev">Anterior</a>
-                            <a href="#" role="button" class="btn btn-next">Siguiente</a>
+                            <a href="#" role="button" class="btn btn-next" onclick="modalstep2()">Siguiente</a>
                         </div>
                     </div>
 
@@ -163,14 +164,18 @@
                                                 <% if (data[i].estado==="LIBRE" ) { %>
 
                                                     <td>
-                                                        <button class="button-cantidad" onclick="cantidad(<%= i+1 %>,0)">-</button>
-                                                        <button class="button-cantidad" onclick="cantidad(<%= i+1 %>,1)">+</button>
+                                                        <button class="button-cantidad"
+                                                            onclick="cantidad(<%= i+1 %>,0)">-</button>
+                                                        <button class="button-cantidad"
+                                                            onclick="cantidad(<%= i+1 %>,1)">+</button>
                                                     </td>
 
                                                     <% }else if(data[i].estado==="OCUPADA" ) { %>
                                                         <td>
-                                                            <button class="button-block" disabled onclick="cantidad(<%= i+1 %>,0)">-</button>
-                                                            <button class="button-block" disabled onclick="cantidad(<%= i+1 %>,1)">+</button>
+                                                            <button class="button-block" disabled
+                                                                onclick="cantidad(<%= i+1 %>,0)">-</button>
+                                                            <button class="button-block" disabled
+                                                                onclick="cantidad(<%= i+1 %>,1)">+</button>
                                                         </td>
 
                                                         <% } %>
@@ -188,8 +193,8 @@
                                         <h4>Simple</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
-                                        <input oninput="sumaHabitaciones()" id="1" type="text" class="input_hab text-center"
-                                            value="0">
+                                        <input oninput="sumaHabitaciones()" id="1" type="text"
+                                            class="input_hab text-center" value="0">
                                     </div>
                                     <div class="col-md-2 mt-4">
                                     </div>
@@ -254,7 +259,7 @@
                         </div>
                         <div class="btns-group">
                             <a href="#" class="btn btn-prev">Anterior</a>
-                            <a href="#" class="btn btn-next">Siguiente</a>
+                            <a href="#" class="btn btn-next" onclick="modalstep3()">Siguiente</a>
                         </div>
                     </div>
 
@@ -266,13 +271,13 @@
 
                                     <div class="col-md-6 text-center preadelanto" id="check" name="div_preadelanto">
                                         <label for="vehicle1">Pre Adelanto S/.<input type="text" id="test1"></label>
-                                     
+
                                         <input type="checkbox" id="pre_adelanto_check">
                                     </div>
 
                                     <div class="col-md-6 text-center cuotatotal" id="check" name="div_cuotatotal">
                                         <label for="vehicle1">Cuota Total S/.<input type="text" id="test2"></label>
-                                        
+
                                         <input type="checkbox" id="cuota_total_check">
                                     </div>
 
@@ -403,5 +408,13 @@
             return false;
 
         })
+
+
+
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+
     </script>
     <%- include ('./layouts/footer.ejs') %>

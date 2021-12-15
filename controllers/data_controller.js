@@ -26,6 +26,8 @@ function date() {
   return (today = mm + '/' + dd + '/' + yyyy)
 }
 
+
+
 //POST
 controller.view = (req, res) => {
   const userSession = req.session.user
@@ -64,9 +66,14 @@ controller.view = (req, res) => {
     if (error) {
       console.log(error)
     } else {
-      console.log('Email Enviado a: ' + email)
-      let mensaje = `Hola ${titular} ${apellidos} \n\n Su Reserva a sido realizada para el dia ${fecha_arribo} hasta el dia ${fecha_salida} \n\n Gracias por preferirnos`
+      
+      function formatDate(date) {
+        return date.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+      }
 
+
+      console.log('Email Enviado a: ' + email)
+      let mensaje = `Hola ${titular} ${apellidos} \n\nSu Reserva a sido realizada para el dia ${formatDate(fecha_arribo)} hasta el dia ${formatDate(fecha_salida)} \n\nCon un precio total de ${cuota_total} nuevos soles, para confirmar su reserva en el hostal, presentar su documento de identidad: ${num_doc}\n\nGracias por preferirnos - Qorichaska \n © MBC 2021`
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -95,9 +102,9 @@ controller.view = (req, res) => {
     //Podemos usar el model y guardar los datos en un objeto noma pa que se vea mas chingon xd
   })
 
+  
+
   setTimeout(time, 0.5) //Para mostrar interfaz inicial
-
-
 }
 
 controller.getRooms = async (req, res) => {

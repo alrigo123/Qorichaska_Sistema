@@ -1,5 +1,8 @@
 {
   "name": "qoriweb",
+   "engines": {
+    "node": ">=50.9" 
+  },
   "version": "1.0.0",
   "description": "sistema web de reservas",
   "main": "index.js",

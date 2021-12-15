@@ -86,19 +86,4 @@ function comprueba() {
       <input readonly value="EN ESPERA" type="text" name="estado" id="estado" />`
   }
 }
-/*
-function modalstep4() {
-comprueba();
-if (!test.checked && !checkbox.checked) {
-  Swal.fire({
-    title: `Alerta`,
-    text: `Debe de Completar Todos los Campos `,
-    icon: 'warning',
-    showConfirmButton: true,
-    timer: false
-  }).then(() => {
-    window.location = '/reserva'
-  })
-}
-}
-  */
+

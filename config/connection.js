@@ -1,16 +1,16 @@
 const mysql = require('mysql')
 const conex = mysql.createConnection({
+  /*
   host: 'localhost',
   user: 'root',
   password: 'cjmxc100',
   database: 'dbreserva',
-  /*
-      host: 'bwuu3e9kaid8qkawouep-mysql.services.clever-cloud.com',
-      user: 'um7hmnsl1mmq7opq',
+  */
+      host: 'b9pfpxmqupyksx8wmwkz-mysql.services.clever-cloud.com',
+      user: 'uqgehdbrdlo92ywr',
       port: 3306,
-      password: '7JOZLnBP1b9SEpMZcoCq',
-      database: 'bwuu3e9kaid8qkawouep',
-      */
+      password: 'QqXxMZQHyYXnGCvda52W',
+      database: 'b9pfpxmqupyksx8wmwkz',
 })
 
 try {
