@@ -26,15 +26,11 @@ function date() {
   return (today = mm + '/' + dd + '/' + yyyy)
 }
 
-
-
 //POST
 controller.view = (req, res) => {
-  const userSession = req.session.user
-
   //const data = req.body
-
   //Cliente
+
   const titular = req.body.nombre_titular
   const apellidos = req.body.apellidos
   const tipo_doc = req.body.tipo_documento
@@ -57,23 +53,26 @@ controller.view = (req, res) => {
   const nro_personas = req.body.nro_personas
   const estado = req.body.estado
   const duracion_estadia = req.body.duracion_estadia
+  const fecha_limite = req.body.fecha_limite
 
   //let sql = 'call insertar_datos(?,?,?,?)';
 
   let sql = `CALL insertar_datos('${metodo}', ${preadelanto}, ${cuota_total}, '${titular}', '${apellidos}', '${tipo_doc}', '${num_doc}', '${pais_or}', '${ciudad}', '${email}', '${nacimiento}', '${nro_telefono}', '${fecha_arribo}', '${fecha_salida}', ${nro_habitaciones}, ${nro_personas}, '${estado}', '${duracion_estadia}') `
-
+//if estado no validado cambiar mensaje 
   conex.query(sql, true, (error, result, field) => {
     if (error) {
       console.log(error)
     } else {
-      
       function formatDate(date) {
-        return date.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+        return date.replace(/^(\d{4})-(\d{2})-(\d{2})$/g, '$3/$2/$1')
       }
 
-
       console.log('Email Enviado a: ' + email)
-      let mensaje = `Hola ${titular} ${apellidos} \n\nSu Reserva a sido realizada para el dia ${formatDate(fecha_arribo)} hasta el dia ${formatDate(fecha_salida)} \n\nCon un precio total de ${cuota_total} nuevos soles, para confirmar su reserva en el hostal, presentar su documento de identidad: ${num_doc}\n\nGracias por preferirnos - Qorichaska \n © MBC 2021`
+      let mensaje = `Hola ${titular} ${apellidos} \n\nSu Reserva a sido realizada para el dia ${formatDate(
+        fecha_arribo,
+      )} hasta el dia ${formatDate(
+        fecha_salida,
+      )} \n\nCon un precio total de ${cuota_total} nuevos soles, para confirmar su reserva en el hostal, presentar su documento de identidad: ${num_doc}\n\nGracias por preferirnos - Qorichaska \n © MBC 2021`
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -101,13 +100,13 @@ controller.view = (req, res) => {
     }
     //Podemos usar el model y guardar los datos en un objeto noma pa que se vea mas chingon xd
   })
-
-  
-
+  req.session.destroy()
   setTimeout(time, 0.5) //Para mostrar interfaz inicial
 }
 
 controller.getRooms = async (req, res) => {
+  req.session.user = req.body.user
+
   await model_Data.getRooms(conex, (err, rooms) => {
     if (err) throw `Error ${err.message}`
     res.render('reserva', {

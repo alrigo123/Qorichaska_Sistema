@@ -49,12 +49,12 @@ function myFunction() {
       <input class="text-center" readonly type="text" value="123-456-7890-0000" name="" id="input_pago" placeholder="" aria-describedby="helpId">
       </div>
       <div class="form-group">
-      <label for="" class="form-label">Fecha Limite de Deposito</label>
-      <input class="text-center" readonly type="text" name="" id="fecha_limite" value="${date()}" aria-describedby="helpId">
+      <label for="" class="form-label">Fecha Limite de Deposito</label>="
+      <input class="text-center" readonly type="text" name="" id="fecha_limite" name="fecha_limite" value="${date()}" aria-describedby="helpId">
       </div>
       <div class="form-group">
-      <label for="" class="form-label">Si no realiza el pago hasta la fecha
-      <input class="text-center" readonly type="text" id="fecha_limite" value="${date()}" style="text-align:left;
+      <label for="" class="form-label">Si no realiza el pago hasta la fecha="
+      <input class="text-center" readonly type="text" id="fecha_limite" name="fecha_limite" value="${date()}" style="text-align:left;
       width: 15%;
       display: inline;
       border: 1px none red;
