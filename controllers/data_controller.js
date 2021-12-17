@@ -5,9 +5,6 @@ const controller = {}
 
 function time() {
   ;(req, res) => {
-    const userSession = req.session.user
-
-    res.clearCookie('jwt')
     return res.redirect('/')
   }
 }
@@ -29,8 +26,8 @@ function date() {
 //POST
 controller.view = (req, res) => {
   //const data = req.body
-  //Cliente
 
+  //Cliente
   const titular = req.body.nombre_titular
   const apellidos = req.body.apellidos
   const tipo_doc = req.body.tipo_documento
@@ -53,12 +50,8 @@ controller.view = (req, res) => {
   const nro_personas = req.body.nro_personas
   const estado = req.body.estado
   const duracion_estadia = req.body.duracion_estadia
-  const fecha_limite = req.body.fecha_limite
-
-  //let sql = 'call insertar_datos(?,?,?,?)';
 
   let sql = `CALL insertar_datos('${metodo}', ${preadelanto}, ${cuota_total}, '${titular}', '${apellidos}', '${tipo_doc}', '${num_doc}', '${pais_or}', '${ciudad}', '${email}', '${nacimiento}', '${nro_telefono}', '${fecha_arribo}', '${fecha_salida}', ${nro_habitaciones}, ${nro_personas}, '${estado}', '${duracion_estadia}') `
-  //if estado no validado cambiar mensaje
 
   conex.query(sql, true, (error, result, field) => {
     if (error) {
@@ -69,8 +62,6 @@ controller.view = (req, res) => {
       }
 
       console.log('Email Enviado a: ' + email)
-
-      //  VALIDADA
 
       const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -101,17 +92,13 @@ controller.view = (req, res) => {
         }
       })
 
-      setTimeout(time, 0.5) //Para mostrar interfaz inicial
+      setTimeout(time, 0.5)
     }
-    //Podemos usar el model y guardar los datos en un objeto noma pa que se vea mas chingon xd
   })
-  req.session.destroy()
-  setTimeout(time, 0.5) //Para mostrar interfaz inicial
+  setTimeout(time, 0.5)
 }
 
 controller.getRooms = async (req, res) => {
-  req.session.user = req.body.user
-
   await model_Data.getRooms(conex, (err, rooms) => {
     if (err) throw `Error ${err.message}`
     res.render('reserva', {

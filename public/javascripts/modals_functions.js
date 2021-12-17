@@ -23,7 +23,7 @@ function modal() {
     })
   }
 }
-/*
+
 function modalstep1() {
   let nombre_titular_input = document.getElementById('nombre_titular_input')
     .value
@@ -47,8 +47,9 @@ function modalstep1() {
     })
   }
 }
-*/
-/*
+
+
+
 function modalstep2(){
   let timeStart = document.getElementById('timeStart').value
   let timeEnd = document.getElementById('timeEnd').value
@@ -75,45 +76,3 @@ function modalstep2(){
     })
   }
 }
-*/
-
-//Missing tow alst modalas with the rigth inpoutd ata conditional
-/*
-function modalstep3(){
-  let h1 = document.getElementById('1').value
-  let h2 = document.getElementById('2').value
-  let h3 = document.getElementById('3').value
-  let h4 = document.getElementById('4').value
-  let h5 = document.getElementById('5').value
-
-  if(h1 == 0 || h2 == 0 || h3 == 0 || h4 == 0 || h5 == 0){
-    Swal.fire({
-      title: `Alerta`,
-      text: `Ingrese numero de Habitaciones a Reservar`,
-      icon: 'warning',
-      showConfirmButton: true,
-      timer: false,
-    }).then(() => {
-      window.location = '/reserva'
-    })
-  }
-}
-*/
-/*
-    function modalstep4() {
-        let nombre_titular_input = document.getElementById('nombre_titular_input').value;
-        let apellido_input = document.getElementById('apellidos_input').value;
-        if (nombre_titular_input === "" || apellido_input === "") {
-          
-          Swal.fire({
-            title: `Alerta`,
-            text: `Debe de Completar Todos los Campos `,
-            icon: 'warning',
-            showConfirmButton: true,
-            timer: false
-          }).then(() => {
-            window.location = '/reserva'
-          })
-        }
-      }
-      */
