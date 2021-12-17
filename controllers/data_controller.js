@@ -23,7 +23,7 @@ function date() {
   if (mm < 10) {
     mm = '0' + mm
   }
-  return (today = mm + '/' + dd + '/' + yyyy)
+  return (today = dd + '/' + mm + '/' + yyyy)
 }
 
 //POST
@@ -58,7 +58,8 @@ controller.view = (req, res) => {
   //let sql = 'call insertar_datos(?,?,?,?)';
 
   let sql = `CALL insertar_datos('${metodo}', ${preadelanto}, ${cuota_total}, '${titular}', '${apellidos}', '${tipo_doc}', '${num_doc}', '${pais_or}', '${ciudad}', '${email}', '${nacimiento}', '${nro_telefono}', '${fecha_arribo}', '${fecha_salida}', ${nro_habitaciones}, ${nro_personas}, '${estado}', '${duracion_estadia}') `
-//if estado no validado cambiar mensaje 
+  //if estado no validado cambiar mensaje
+
   conex.query(sql, true, (error, result, field) => {
     if (error) {
       console.log(error)
@@ -68,11 +69,9 @@ controller.view = (req, res) => {
       }
 
       console.log('Email Enviado a: ' + email)
-      let mensaje = `Hola ${titular} ${apellidos} \n\nSu Reserva a sido realizada para el dia ${formatDate(
-        fecha_arribo,
-      )} hasta el dia ${formatDate(
-        fecha_salida,
-      )} \n\nCon un precio total de ${cuota_total} nuevos soles, para confirmar su reserva en el hostal, presentar su documento de identidad: ${num_doc}\n\nGracias por preferirnos - Qorichaska \n © MBC 2021`
+
+      //  VALIDADA
+
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -80,6 +79,12 @@ controller.view = (req, res) => {
           pass: '9TWvLTS2tr*QUk$',
         },
       })
+
+      let mensaje = `Hola ${titular} ${apellidos} \n\nSu Reserva a sido realizada para el dia ${formatDate(
+        fecha_arribo,
+      )} hasta el dia ${formatDate(
+        fecha_salida,
+      )} \n\nCon un precio total de ${cuota_total} nuevos soles, para confirmar su reserva en el hostal, presentar su documento de identidad: ${num_doc}\n\nGracias por preferirnos - Qorichaska \n © MBC 2021`
 
       const mailOptions = {
         from: 'basembc04@gmail.com',

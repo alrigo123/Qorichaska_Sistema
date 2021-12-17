@@ -49,3 +49,40 @@ function sumaHabitaciones() {
   ).innerHTML = ` <label for="position">Tipo Habitacion</label>
     <input readonly value=" ${valors} - ${valord} - ${valort} -${valorm} - ${valorsuite}" type="text" name="tipoHabitaciones" />`
 }
+
+
+
+
+// 2. Funcion que a la fecha de hoy se sume 3 dias y se ponga en input
+function sumartresDias(){
+  if (timeStart != null && timeEnd == null) {
+    var hoy = new Date(timeStart)
+    var suma = new Date(hoy.addDays(3))
+    document.getElementById('timeEnd').value = suma
+  }
+}
+
+// 3. que la fecha de nacimiento sea mayor de 18
+function mayorEdad(){
+  var fecha_nac = new Date(document.getElementById('fecha_nac').value)
+  var Edad = calcularEdad(fecha_nac)
+  if(Edad >= 18){
+    return true
+  }
+  else{
+    alert('Usted no es mayor de edad')
+    document.getElementById('fecha_nac').value = ''
+    return false
+  }
+}
+
+function calcularEdad(fecha_nac){
+  var hoy = new Date();
+  var cumpleanos = new Date(fecha_nac);
+  var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+  var m = hoy.getMonth() - cumpleanos.getMonth();
+  if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+      edad--;
+  }
+  return edad;
+}

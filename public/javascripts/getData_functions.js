@@ -65,7 +65,7 @@ test.addEventListener('change', comprueba, false)
 
 function comprueba() {
   //agregar modales para el pago o checkbox
-
+  event.preventDefault()
   if (checkbox.checked) {
     test.disabled = true
   } else {
@@ -85,5 +85,24 @@ function comprueba() {
       <label for="position">Estado de Reserva</label>
       <input readonly value="EN ESPERA" type="text" name="estado" id="estado" />`
   }
-}
 
+  
+  $(document).ready(function () {
+    $('#mySelect').change(function () {
+      var job = $('#mySelect').val()
+      if (job === '') {
+        Swal.fire({
+          title: `Alerta`,
+          text: `Debe de Completar metodo de pago `,
+          icon: 'warning',
+          showConfirmButton: true,
+          timer: false,
+        }).then(() => {
+          window.location = '/reserva'
+        })
+      }else{
+      }
+    })
+  })
+
+}

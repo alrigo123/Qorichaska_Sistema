@@ -22,13 +22,13 @@
 
                                 <div class="form-group">
                                     <label for="username">Nombre(s) de Titular</label>
-                                    <input style="background-color: red;" autocomplete="off" oninput="getData()" type="text" id="nombre_titular_input"
-                                        required />
+                                    <input autocomplete="off" oninput="getData()"
+                                        type="text" id="nombre_titular_input" required />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="dob">Fecha de Nacimiento</label>
-                                    <input autocomplete="off" type="date" name="fecha_nac" id="fecha_nac" />
+                                    <input autocomplete="off" value="2001-01-01" type="date" name="fecha_nac" id="fecha_nac" />
                                 </div>
 
                                 <div class="form-group">
@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="position" >Correo Electronico</label>
+                                    <label for="position">Correo Electronico</label>
                                     <input autocomplete="off" type="text" id="email_input" required />
                                 </div>
 
@@ -118,7 +118,8 @@
 
                                 <div class="form-group">
                                     <label for="estadia">Tiempo de Estadia</label>
-                                    <input class="text-center" readonly type="text" name="duracion_estadia" id="daysDiscount" />
+                                    <input class="text-center" readonly type="text" name="duracion_estadia"
+                                        id="daysDiscount" />
                                 </div>
 
                             </div>
@@ -130,9 +131,9 @@
                     </div>
 
                     <!-- PARTE 3 -->
-                    <div class="form-step text-dark">
-                        <div class="row text-dark align-items-center justify-content-center">
-                            <div class="col-md-6">
+                    <div class="form-step text-dark" >
+                        <div class="row text-dark align-items-center justify-content-center" style="border:1px none red; padding:5px;">
+                            <div class="col-md-6 thabit">
                                 <!-- Con Bucle -->
                                 <table class="table table-bordered table-responsive table-dark table-hover">
                                     <thead class="thead-default thead-light">
@@ -187,72 +188,55 @@
                             <div class="col-md-2 text-center mx-auto align-items-center count_hab">
                                 <!-- Usar en estilos esta parte de brown -->
                                 <div class="row text-center" style="border: 2px none brown;width:70%;margin: auto;">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                    
+                                    <div class="col-md-6" style="border-right: 2px solid black ;  margin-top:10px;">
                                         <h4>Simple</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" id="1" type="text"
                                             class="input_hab text-center" value="0">
                                     </div>
-                                    <div class="col-md-2 mt-4">
-                                    </div>
                                 </div>
                                 <div class="row text-center mx-auto align-items-center"
                                     style="border: 2px none brown;width:70%;margin: auto;">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
-                                        <h4>Doble</h4>
+                                  
+                                    <div class="col-md-6" style="border-right: 2px solid black ;  margin-top:10px;">
+                                        <h4 class="label_hab">Doble</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="2" type="text"
                                             class="input_hab text-center" value="0">
                                     </div>
-                                    <div class="col-md-2 mt-4">
-                                    </div>
                                 </div>
                                 <div class="row text-center mx-auto align-items-center"
                                     style="border: 2px none brown;width:70%;margin: auto;">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                    
+                                    <div class="col-md-6" style="border-right: 2px solid black ;  margin-top:10px;">
                                         <h4>Triple</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="3" type="text"
                                             class="input_hab text-center" value="0">
                                     </div>
-                                    <div class="col-md-2 mt-4">
-                                    </div>
                                 </div>
                                 <div class="row text-center mx-auto align-items-center"
                                     style="border: 2px none brown;width:70%;margin: auto;">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                    <div class="col-md-6" style="border-right: 2px solid black ;  margin-top:10px;">
                                         <h4>Matrimonial</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="4" type="text"
                                             class="input_hab text-center" value="0">
                                     </div>
-                                    <div class="col-md-2 mt-4">
-                                    </div>
                                 </div>
                                 <div class="row text-center mx-auto align-items-center"
                                     style="border: 2px none brown;width:70%;margin: auto;">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div class="col-md-4" style="border-right: 2px solid black ; margin-bottom: 2px;">
+                                    <div class="col-md-6" style="border-right: 2px solid black ;  margin-top:10px;">
                                         <h4>Suite</h4>
                                     </div>
                                     <div class="col-md-4 mx-auto">
                                         <input oninput="sumaHabitaciones()" readonly id="5" type="text"
                                             class="input_hab text-center" value="0">
-                                    </div>
-                                    <div class="col-md-2 mt-4">
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +271,7 @@
                                     <div class="pago">
                                         <label for="metodo">Metodo de Pago</label>
                                         <select id="mySelect" oninput="getData()" onchange="myFunction()">
-                                            <option value="" selected="selected" disabled>Seleccione...</option>
+                                            <option value="noval" selected="selected" disabled>Seleccione...</option>
                                             <option value="TARJETA">TARJETA</option>
                                             <option value="DEPOSITO EFECTIVO">DEPOSITO EFECTIVO</option>
                                         </select>
@@ -303,7 +287,7 @@
 
                             <div class="btns-group">
                                 <a href="#" class="btn btn-prev">Anterior</a>
-                                <a href="#" class="btn btn-next" onclick="modalstep4()">Siguiente</a>
+                                <a href="#" class="btn btn-next" onclick="comprueba()">Siguiente</a>
                             </div>
                         </div>
                     </div>
